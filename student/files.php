@@ -36,7 +36,7 @@ include "../include/connection.php"
                 </form>
                 <hr></hr>
                 <div class="req-list1">
-                    <a href="#MOA">Memorandum Of Agreement</a>
+                    <a href="req-list1-content.php">Memorandum Of Agreement</a>
                     <h5>Example Date</h5>
                     <label name="status">Status</label>
                 </div>

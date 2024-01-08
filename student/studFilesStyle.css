@@ -184,6 +184,7 @@ h3{
   h5{
     position: relative;
     top: -15px;
+    color: rgb(109, 109, 109)
   }
   label[name="status"]{
   position: absolute;
