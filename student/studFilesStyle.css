@@ -85,6 +85,14 @@ h3{
     background-color: yellow;
     color: blue;
   }
+  input[name="query"]{
+    position: absolute;
+    padding: 10px;
+    top: 25;
+    right: 10px;
+    border-radius: 5px;
+    border-color: blue;
+  }
   .reqlist-container {
     position: relative;
     top: 20px;
@@ -108,9 +116,14 @@ h3{
     color: black; /* White text color for links */
     text-decoration: none;
   }
+  .reqlist-container a:hover {
+    color: blue; /* White text color for links */
+    text-decoration: none;
+    font-weight: 600;
+  }
   .req-list1 {
     position: relative;
-    top: 10px;
+    height: 50px ;
     background-color: white; 
     color: black; 
     padding: 10px;
@@ -118,4 +131,62 @@ h3{
     border: 2px solid rgb(197, 197, 197);
     text-align: left;
     backdrop-filter: 10px;
+    margin-bottom: 5px;
   }
+  .req-list2 {
+    position: relative;
+    height: 50px ;
+    background-color: white; 
+    color: black; 
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid rgb(197, 197, 197);
+    text-align: left;
+    backdrop-filter: 10px;
+    margin-bottom: 5px;
+  }
+  .req-list3 {
+    position: relative;
+    height: 50px ;
+    background-color: white; 
+    color: black; 
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid rgb(197, 197, 197);
+    text-align: left;
+    backdrop-filter: 10px;
+    margin-bottom: 5px;
+  }
+  .req-list4 {
+    position: relative;
+    height: 50px ;
+    background-color: white; 
+    color: black; 
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid rgb(197, 197, 197);
+    text-align: left;
+    backdrop-filter: 10px;
+    margin-bottom: 5px;
+  }
+  .req-list5 {
+    position: relative;
+    height: 50px ;
+    background-color: white; 
+    color: black; 
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid rgb(197, 197, 197);
+    text-align: left;
+    backdrop-filter: 10px;
+    margin-bottom: 5px;
+  }
+  h5{
+    position: relative;
+    top: -15px;
+  }
+  label[name="status"]{
+  position: absolute;
+  right: 150px;
+  top: 20px;
+  } 

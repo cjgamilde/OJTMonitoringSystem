@@ -38,25 +38,29 @@ include "../include/connection.php"
                 <div class="req-list1">
                     <a href="#MOA">Memorandum Of Agreement</a>
                     <h5>Example Date</h5>
+                    <label name="status">Status</label>
                 </div>
-                <div class="req-list1">
+                <div class="req-list2">
                     <a href="#MOA">Memorandum Of Agreement</a>
                     <h5>Example Date</h5>
+                    <label name="status">Status</label>
                 </div>
-                <div class="req-list1">
+                <div class="req-list3">
                     <a href="#MOA">Memorandum Of Agreement</a>
+                    <label name="status">Status</label>
                     <h5>Example Date</h5>
                 </div>
-                <div class="req-list1">
+                <div class="req-list4">
                     <a href="#MOA">Memorandum Of Agreement</a>
                     <h5>Example Date</h5>
+                    <label name="status">Status</label>
                 </div>
-                <div class="req-list1">
+                <div class="req-list5">
                     <a href="#MOA">Memorandum Of Agreement</a>
                     <h5>Example Date</h5>
+                    <label name="status">Status</label>
                 </div>
-                     <p>This is a sample announcement message. Feel free to replace this text with your own announcement. Make sure to check our <a href="#">website</a> for more details.</p>
-                </div>
+            </div>
     
     </div>
 </body>
