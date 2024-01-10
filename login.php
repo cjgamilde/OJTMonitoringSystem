@@ -58,7 +58,8 @@
             $sel_student->store_result();
             $sel_student->fetch();
 
-            if(password_verify($password,$hashedpassword))
+            if($usertype == $db_usertype){
+               if(password_verify($password,$hashedpassword))
             {
                 $_SESSION["username"] = $username;
 
@@ -74,29 +75,137 @@
 
             }
 
-          }
 
-          else{
-            echo "<script>alert('Invalid User');</script>";
+            }
+            else{
+               echo "<script>alert('Invalid Users');</script>";
+            }
+
+           
+          }
+        }
+
+
+        if ($usertype == 2 ){
+          $sel_admin = $conn ->prepare("SELECT `username`, `password`, `usertype` FROM `users` WHERE username = ? AND usertype = ? ");
+
+          if($sel_admin){
+            $sel_admin->bind_param("si", $username,$admin);
+            $sel_admin->execute();
+            $sel_admin->bind_result($username,$hashedpassword,$db_usertype);
+            $sel_admin->store_result();
+            $sel_admin->fetch();
+
+            if($usertype == $db_usertype){
+
+                if(password_verify($password,$hashedpassword))
+             {
+                $_SESSION["username"] = $username;
+
+
+                //admin page
+             echo "<script>window.location.href='admin/index.php'</script>";
+
+
+              }
+              else{
+
+                echo "<script>alert('Invalid Credential');</script>";
+
+              }
+
+              }
+
+            else{
+                  echo "<script>alert('Invalid Users');</script>";
+              }
 
           }
 
         }
+
+        if ($usertype == 3 ){
+          $sel_faculty = $conn ->prepare("SELECT `username`, `password`, `usertype` FROM `users` WHERE username = ? AND usertype = ? ");
+
+          if($sel_faculty){
+            $sel_faculty->bind_param("si", $username,$faculty);
+            $sel_faculty->execute();
+            $sel_faculty->bind_result($username,$hashedpassword,$db_usertype);
+            $sel_faculty->store_result();
+            $sel_faculty->fetch();
+
+            if($usertype == $db_usertype){
+
+                if(password_verify($password,$hashedpassword))
+             {
+                $_SESSION["username"] = $username;
+
+
+                //faculty page
+             echo "<script>window.location.href='faculty/index.php'</script>";
+
+
+              }
+              else{
+
+                echo "<script>alert('Invalid Credential');</script>";
+
+              }
+
+              }
+
+            else{
+                  echo "<script>alert('Invalid Users');</script>";
+              }
+
+          }
+
+        }
+
+
+        if ($usertype == 4 ){
+          $sel_coordinator = $conn ->prepare("SELECT `username`, `password`, `usertype` FROM `users` WHERE username = ? AND usertype = ? ");
+
+          if($sel_coordinator){
+            $sel_coordinator->bind_param("si", $username,$coordinator);
+            $sel_coordinator->execute();
+            $sel_coordinator->bind_result($username,$hashedpassword,$db_usertype);
+            $sel_coordinator->store_result();
+            $sel_coordinator->fetch();
+
+            if($usertype == $db_usertype){
+
+                if(password_verify($password,$hashedpassword))
+             {
+                $_SESSION["username"] = $username;
+
+
+                //coordinator page
+             echo "<script>window.location.href='coordinator/index.php'</script>";
+
+
+              }
+              else{
+
+                echo "<script>alert('Invalid Credential');</script>";
+
+              }
+
+              }
+
+            else{
+                  echo "<script>alert('Invalid Users');</script>";
+              }
+
+          }
+
+        }
+        
 
       
 
 
-        // $insert = $conn ->prepare("SELECT `username`, `password`, `usertype` FROM `users` WHERE username = ? AND usertype =?");
-        // if ($insert){
-        //     $insert->bind_param("s", $username);
-        //     $insert->execute();
-        //     $insert->bind_result($username, $hashedpassword, $db_usertype);
-        //     $insert->store_result();
-        //     $insert->fetch();
-        //     $insert->close();
-            // echo "<script>alert('Registered');</script>";
-          //  echo "<script>window.location.href='login.php'</script>";
         }
-    // }
+
 
 ?>
