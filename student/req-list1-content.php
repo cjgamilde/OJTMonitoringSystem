@@ -21,7 +21,7 @@ include "../include/connection.php"
         <a name="files" href="files.php">Files</a>
         <a name="attendance" href="attendance.php">Attendance</a>
         <a href="#Attendance">Progress</a>
-        <a href="#Attendance">Activity</a>
+        <a name="activity" href="activity.php">Activity</a>
         <!-- Add more links as needed -->
     </div>
 

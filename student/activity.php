@@ -7,7 +7,7 @@ include "../include/connection.php"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="studAttendanceStyle.css">
+    <link rel="stylesheet" href="studActivityStyle.css">
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
@@ -26,20 +26,17 @@ include "../include/connection.php"
 
     <!-- Main Content -->
     <div class="content">
-        <h2>DASHBOARD</h2>
+        <h2>Activity</h2>
         <hr></hr>
-        <button class="attendance-button">My Attendance</button>
-        <a href="timesheet.php">
-        <button class="timeSheet-button" href="timeSheet.php">Time Sheet</button></a>
-        <div class="analytics-container">
-                <h2>Attendance Analysis</h2>
+        <button class="activities-button">My Activities</button>
+        <div class="actReport-container">
+                <h2>Activity Report</h2>
+                <form action="/search" method="get">
+                 <input type="text" name="query" placeholder="Search...">
+                </form>
                 <hr></hr>
-             <p>This is sample for attendance analytics.</p>
-        </div>
-        <div class="clockIn-container">
-                <h2>clockin</h2>
-             <p>this is sample for widget like clock in aayusin pa kasi sa right dapat to</p>
-        </div>
+                
+            </div>
     
     </div>
 </body>
