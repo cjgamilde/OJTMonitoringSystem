@@ -7,14 +7,14 @@ include "../include/connection.php"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="studAttendanceStyle.css">
+    <link rel="stylesheet" href="../src/css/studAttendanceStyle.css">
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
 
     <!-- Sidebar -->
     <div class="sidebar">
-       <img class="ntclogo" src="../src/ntclogo.png"></img>
+       <img class="ntclogo" src="../src/images/ntclogo.png"></img>
        <h3>Student Portal</h3>
         <a name="dashboard" href="index.php">Dashboard</a>
         <a name="files" href="files.php">Files</a>

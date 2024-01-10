@@ -21,12 +21,14 @@ include "../include/connection.php"
        <img class="ntclogo" src="../src/images/ntclogo.png"></img>
        <h3>Student Portal</h3>
        
-        <a  name="dashboard" href="index.php"> <i class="bi bi-house-fill">Dashboard</i></a>
+        <a name="dashboard" href="index.php"> <!--<i class="bi bi-house-fill"> --> </i> Dashboard</a>
         <a name="files" href="files.php">Files</a>
         <a name="attendance" href="attendance.php">Attendance</a>
         <a href="#Attendance">Progress</a>
-        <a href="#Attendance">Activity</a>
-
+        <a name="activity" href="activity.php">Activity</a>
+        <hr></hr>
+        <a>
+        <button class="btn btn-secondary">Logout</button></a>
         <!-- Add more links as needed -->
     </div>
 
@@ -42,6 +44,7 @@ include "../include/connection.php"
             <input type="file" id="file" />
             <label for="file">Upload Photo</label>
         </div>
+    
         <div class="analytics-container mb-5">
                 <h2>Personal Info</h2>
                 <hr>
@@ -70,7 +73,7 @@ include "../include/connection.php"
                     <div class="col-auto">
                         <label for="inputtext6" class="col-form-label">College:</label>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
                     </div>
                     <div class="col-auto">
@@ -88,7 +91,7 @@ include "../include/connection.php"
                     <div class="col-auto">
                         <label for="inputtext6" class="col-form-label">Student No:</label>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
                     </div>
                     <div class="col-auto">
@@ -100,7 +103,7 @@ include "../include/connection.php"
                     <div class="col-auto">
                         <label for="inputtext6" class="col-form-label">Contact No:</label>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
                     </div>
                     <div class="col-auto">

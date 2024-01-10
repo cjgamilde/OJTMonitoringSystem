@@ -7,20 +7,23 @@ include "../include/connection.php"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="studIndexStyle.css">
+    <link rel="stylesheet" href="../src/css/studIndexStyle.css">
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
 
     <!-- Sidebar -->
     <div class="sidebar">
-       <img class="ntclogo" src="../src/ntclogo.png"></img>
+       <img class="ntclogo" src="../src/images/ntclogo.png"></img>
        <h3>Student Portal</h3>
         <a name="dashboard" href="index.php">Dashboard</a>
         <a name="files" href="files.php">Files</a>
         <a name="attendance" href="attendance.php">Attendance</a>
         <a href="#Attendance">Progress</a>
         <a name="activity" href="activity.php">Activity</a>
+
+        <hr></hr>
+        <a class="logout" href="#">Logout</a>
         <!-- Add more links as needed -->
     </div>
 
