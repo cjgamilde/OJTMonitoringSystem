@@ -17,8 +17,8 @@ include "../include/connection.php"
        <img class="ntclogo" src="../src/ntclogo.png"></img>
        <h3>Student Portal</h3>
         <a name="dashboard" href="index.php">Dashboard</a>
-        <a href="files.php">Files</a>
-        <a href="#Attendance">Attendance</a>
+        <a name="files" href="files.php">Files</a>
+        <a name="attendance" href="attendance.php">Attendance</a>
         <a href="#Attendance">Progress</a>
         <a href="#Attendance">Activity</a>
         <!-- Add more links as needed -->

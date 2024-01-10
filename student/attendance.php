@@ -7,7 +7,7 @@ include "../include/connection.php"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="studIndexStyle.css">
+    <link rel="stylesheet" href="studAttendanceStyle.css">
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
@@ -28,16 +28,17 @@ include "../include/connection.php"
     <div class="content">
         <h2>DASHBOARD</h2>
         <hr></hr>
-        <button class="Dash-button">My Dashboard</button>
-        <a href="studProfile.php">
-        <button class="Profile-button" href="studProfile.php">Profile</button></a>
-        <div class="announcement-container">
-                <h2>Important Announcement</h2>
-             <p>This is a sample announcement message. Feel free to replace this text with your own announcement. Make sure to check our <a href="#">website</a> for more details.</p>
-        </div>
+        <button class="attendance-button">My Attendance</button>
+        <a href="timesheet.php">
+        <button class="timeSheet-button" href="timeSheet.php">Time Sheet</button></a>
         <div class="analytics-container">
-                <h2>Attendance Report</h2>
-             <p>This is a sample of attendance report</p>
+                <h2>Attendance Analysis</h2>
+                <hr></hr>
+             <p>This is sample for attendance analytics.</p>
+        </div>
+        <div class="clockIn-container">
+                <h2>clockin</h2>
+             <p>this is sample for widget like clock in aayusin pa kasi sa right dapat to</p>
         </div>
     
     </div>
