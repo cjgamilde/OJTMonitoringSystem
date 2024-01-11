@@ -2,7 +2,8 @@
 session_start();
 date_default_timezone_set('Asia/Manila');
 $student_id = $_SESSION["username"];
-include "../include/connection.php"
+include "../include/connection.php";
+include "../include/session.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +15,10 @@ include "../include/connection.php"
     <title>Admin Page</title>
 </head>
 <body>
+
+
+
+<a href = "../include/logout.php">Logout</a>
     
 </body>
 </html>
