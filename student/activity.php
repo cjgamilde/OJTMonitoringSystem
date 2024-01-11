@@ -1,8 +1,10 @@
 <?php 
 session_start();
 date_default_timezone_set('Asia/Manila');
+$student_id = $_SESSION["username"];
 include "../include/connection.php"
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
