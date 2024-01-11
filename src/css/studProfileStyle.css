@@ -106,7 +106,7 @@ h3{
   }
   .profile-container {
     position: relative;
-    top: 20px;
+    top: 10px;
     background-color: rgba(217, 214,  238); 
     color: black; 
     padding: 20px;
@@ -155,4 +155,23 @@ h3{
   .profile-container label:hover{
     color: rgb(66,66,66);
     border: 1px dashed  rgb(66, 66, 66);
+  }
+  .info-container{
+    position: relative;
+    top: 20px;
+    background-color: white; 
+    color: black; 
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solidrgb(66,66,66);;
+    text-align: left;
+    backdrop-filter: 10px;
+   
+    height:320px ; /* Set a fixed height for the container */
+    overflow: auto; /* Enable vertical scroll when content exceeds the height */
+    border: 2px solid #ccc;
+    padding: 10px;
+  }
+  .analytics-container{
+    top: 10px;
   }

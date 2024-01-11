@@ -57,6 +57,8 @@
             color: white;
         }
         .sidebar a[name="logout"]{
+          position: relative;
+          top: 50px;
           border-radius: 8px;
          margin-right: 20px;
          margin-left: 20px;

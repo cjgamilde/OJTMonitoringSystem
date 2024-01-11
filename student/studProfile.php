@@ -45,89 +45,90 @@ include "../include/session.php";
             <input type="file" id="file" />
             <label for="file">Upload Photo</label>
         </div>
-    
-        <div class="analytics-container mb-5">
-                <h2>Personal Info</h2>
-                <hr>
-               
-            <div class="row g-3 align-items-center">
-               
-                    <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">Last Name:</label>
-                    </div>
-                    <div class="col-md-5">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-
-                     <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">Email:</label>
-                    </div>
-                    <div class="col-md-5">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-                     <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">First Name:</label>
-                    </div>
-                    <div class="col-md-5">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-                    <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">College:</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-                    <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">Middle Name:</label>
-                    </div>
-                    <div class="col-md-5">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-                    <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">Year-Course:</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-                    <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">Student No:</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-                    <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">BirthDate:</label>
-                    </div>
-                    <div class="col-md-5">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-                    <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">Contact No:</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-                    <div class="col-auto">
-                        <label for="inputtext6" class="col-form-label">Gender:</label>
-                    </div>
-                    <div class="col-md-5">
-                        <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
-                    </div>
-            </div>
-            </form>
-        </div>
-
-         <div class="analytics-container">
-                <h2>Practicum Info:</h2>
-                <hr>
-                <form>
-            <div class="row g-3 align-items-center">
-                <div class="form-control">
+            <div class="info-container">
+                <div class="analytics-container mb-5">
+                        <h2>Personal Info</h2>
+                        <hr>
                     
+                    <div class="row g-3 align-items-center">
+                    
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">Last Name:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">Email:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">First Name:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">College:</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">Middle Name:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">Year-Course:</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">Student No:</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">BirthDate:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">Contact No:</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputtext6" class="col-form-label">Gender:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline">
+                            </div>
+                    </div>
+                    </form>
                 </div>
-               
+            
+                <div class="analytics-container">
+                        <h2>Practicum Info:</h2>
+                        <hr>
+                        <form>
+                    <div class="row g-3 align-items-center">
+                        <div class="form-control">
+                            
+                        </div>
+                    
+                    </div>
+                    </form>
             </div>
-            </form>
     </div>
        
     
