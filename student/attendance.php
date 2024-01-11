@@ -2,7 +2,8 @@
 session_start();
 $student_id = $_SESSION["username"];
 date_default_timezone_set('Asia/Manila');
-include "../include/connection.php"
+include "../include/connection.php";
+include "../include/session.php";
 
 ?>
 <html lang="en">
@@ -23,6 +24,9 @@ include "../include/connection.php"
         <a name="attendance" href="attendance.php">Attendance</a>
         <a href="#Attendance">Progress</a>
         <a name="activity" href="activity.php">Activity</a>
+
+        <hr></hr>
+        <a class="logout" href="../include/logout.php">Logout</a>
         <!-- Add more links as needed -->
     </div>
 

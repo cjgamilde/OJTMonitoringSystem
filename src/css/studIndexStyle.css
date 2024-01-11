@@ -56,6 +56,14 @@
             background-color: blue;
             color: white;
         }
+        .sidebar a[name="logout"]{
+          border-radius: 8px;
+         margin-right: 20px;
+         margin-left: 20px;
+         margin-bottom: 10px;
+          background-color: rgb(139, 139, 139);
+          color: white;
+      }
 
         /* Main Content Styles */
         .content {
