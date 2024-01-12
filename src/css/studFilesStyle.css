@@ -26,8 +26,8 @@ body {
     transition: background 0.3s;
 }*/
 .ntclogo{
-    position: relative;
-    align-items: center;
+  position: relative;
+  left: 30px;
 }
 .sidebar a {
     text-align: center;
