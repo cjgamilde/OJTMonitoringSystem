@@ -20,8 +20,8 @@ include "../include/session.php";
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-auto bg-light sticky-top">
-            <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+        <div class="col-sm-auto bg-white sticky-top shadow">
+            <div class="d-flex flex-sm-column flex-row flex-nowrap bg-white align-items-center sticky-top">
                 <a href="index.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
                    <img src="../src/images/ntclogo.PNG" class="img-thumbnail" alt="...">
                 </a>
