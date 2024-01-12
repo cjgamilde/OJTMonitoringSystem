@@ -92,8 +92,8 @@ include "../include/session.php";
 <?php
 $get_student = $conn->query("SELECT studentid,
     count(studentid) AS total_student,
-    sum(case when gender = 'male' then 1 else 0 end) AS total_male,
-     sum(case when gender = 'female' then 1 else 0 end) AS total_female
+    sum(case when gender = 'Male' then 1 else 0 end) AS total_male,
+     sum(case when gender = 'Female' then 1 else 0 end) AS total_female
 FROM studentinfo");
 
 foreach($get_student as $data){

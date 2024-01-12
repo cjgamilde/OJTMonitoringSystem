@@ -9,42 +9,157 @@ include "../include/session.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/css/studIndexStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-       <img class="ntclogo" src="../src/images/ntclogo.png"></img>
-       <h3>Student Portal</h3>
-        <a name="dashboard" href="index.php">Dashboard</a>
-        <a name="files" href="files.php">Files</a>
-        <a name="attendance" href="attendance.php">Attendance</a>
-        <a href="#Attendance">Progress</a>
-        <a name="activity" href="activity.php">Activity</a>
+   
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-auto bg-white sticky-top shadow">
+            <div class="d-flex flex-sm-column flex-row flex-nowrap bg-white align-items-center sticky-top">
+                <a href="index.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+                   <img src="../src/images/ntclogo.PNG" class="img-fluid" alt="...">
+                </a>
+                <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
+                    <li class="nav-item">
+                        <a href="index.php" class="nav-link py-3 px-2 active" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                           <i class="bi bi-house-fill fs-3"></i> DashBoard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="student_list.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Student List">
+                         <i class="bi bi-folder-fill fs-3"></i> Files
+                        </a>
+                    </li>
+                    <li>
+                        <a href="announcement.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                           <i class="bi bi-clock-fill fs-3"></i> Attendance
+                        </a>
+                    </li>
+                      <li>
+                        <a href="register.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                           <i class="bi bi-clipboard-fill fs-3"></i> Progress
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                           <i class="bi bi-list-ul fs-3"></i> Activity
+                        </a>
+                    </li>
+                       <hr></hr>
 
-        <hr></hr>
-        <a name="logout" href="../include/logout.php">Logout</a>
-        <!-- Add more links as needed -->
-    </div>
+                    <li>
+                        <a href="settings.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                           <i class="bi bi-gear-fill fs-3"></i> Settings
+                        </a>
+                    </li>
 
-    <!-- Main Content -->
-    <div class="content">
-        <h2>DASHBOARD</h2>
-        <hr></hr>
-        <button class="Dash-button">My Dashboard</button>
-        <a href="studProfile.php">
-        <button class="Profile-button" href="studProfile.php">Profile</button></a>
-        <div class="announcement-container">
-                <h2>Important Announcement</h2>
-             <p>This is a sample announcement message. Feel free to replace this text with your own announcement. Make sure to check our <a href="#">website</a> for more details.</p>
+
+                    <li>
+                        <a href="../include/logout.php" class="nav-link py-3 px-2 pt-5" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                           <i class="bi bi-box-arrow-left fs-3" style = "padding-right:10px; "></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="analytics-container">
-                <h2>Attendance Report</h2>
-             <p>This is a sample of attendance report</p>
+
+ <div class="col-sm p-3 min-vh-100">
+         <div class="container-xxl">
+            <h1>Dashboard</h1>
+            <hr> 
+            <a class="btn btn-primary" href="#" role="button">Dashboard</a>
+            <a class="btn btn-secondary" href="#" role="button">Profile</a>
+
+            <div class="pt-5 w-75 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                    <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Announcement</span> 
+                        <div class="container" id="announcement"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-5 w-75 mb-3 ">
+                <div class="card">
+                <div class="row g-03">
+                    <h5 class="card-title pt-3 px-4">Attendance Report</h5>
+                        <div class="col-md-7">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    <div class="col-md-3">
+                        <div class="card-body" >
+                    
+                            <i class="bi bi-dot align-middle" style = "color:blue; font-size:2.5rem;"></i> <span>Working</span>  <span>9</span>
+                            <i class="bi bi-dot align-middle" style = "color:blue; font-size:2.5rem;"></i> <span>Required</span> <span>10</span>
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <p class="border border-primary rounded-pill">2.0 Tardy</p>
+                            <p class="border border-danger rounded-pill">1 Absent</p>
+
+                        </div>
+                       
+                    </div>
+
+                    
+                </div>
+                </div>
+            </div>
+
+
+            
+            
         </div>
-    
-    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Working','Required'],
+      datasets: [{
+        label: '# of Data', 
+        data: [91,400],
+        borderWidth: 1
+      }]
+    },
+    options: {
+        aspectRatio: 3.5,
+     
+    }
+  });
+</script>
+
+
+ 
+ <script>
+            $(document).ready(function() {
+                function getData() {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'real_announcement.php',
+                        success: function(data) {
+                            $('#announcement').html(data);
+                        }
+                    });
+                }
+                getData();
+                setInterval(function() {
+                    getData();
+                }, 1000); // it will refresh your data every 1 sec
+
+            });
+        </script>
+
 </body>
 </html>
