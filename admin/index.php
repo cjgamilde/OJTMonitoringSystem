@@ -23,7 +23,7 @@ include "../include/session.php";
         <div class="col-sm-auto bg-white sticky-top shadow">
             <div class="d-flex flex-sm-column flex-row flex-nowrap bg-white align-items-center sticky-top">
                 <a href="index.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
-                   <img src="../src/images/ntclogo.PNG" class="img-thumbnail" alt="...">
+                   <img src="../src/images/ntclogo.PNG" class="img-fluid" alt="...">
                 </a>
                 <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
                     <li class="nav-item">
