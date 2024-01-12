@@ -31,6 +31,16 @@
                            <i class="bi bi-megaphone-fill fs-3"></i> Announcement
                         </a>
                     </li>
+                    <li>
+                        <a href="register.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                           <i class="bi bi-person-fill-add fs-3"></i>Register
+                        </a>
+                    </li>
+                     <li>
+                        <a href="../include/logout.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                           <i class="bi bi-box-arrow-left fs-3" style = "padding-right:10px;"></i>Logout
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
