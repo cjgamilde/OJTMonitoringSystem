@@ -11,6 +11,7 @@ include "../include/session.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../src/css/studIndexStyle.css">
    
     <title>OJT MONITORING SYSTEM</title>
 </head>
@@ -24,43 +25,44 @@ include "../include/session.php";
                 <a href="index.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
                    <img src="../src/images/ntclogo.PNG" class="img-fluid" alt="...">
                 </a>
+                        <h3>Student Portal</h3>
+                        <br>
                 <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link py-3 px-2 active" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                        <a href="index.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard" name="dashboard">
                            <i class="bi bi-house-fill fs-3"></i> DashBoard
                         </a>
                     </li>
                     <li>
-                        <a href="student_list.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Student List">
+                        <a href="student_list.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Student List">
                          <i class="bi bi-folder-fill fs-3"></i> Files
                         </a>
                     </li>
                     <li>
-                        <a href="announcement.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                        <a href="announcement.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
                            <i class="bi bi-clock-fill fs-3"></i> Attendance
                         </a>
                     </li>
                       <li>
-                        <a href="register.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                        <a href="register.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
                            <i class="bi bi-clipboard-fill fs-3"></i> Progress
                         </a>
                     </li>
                     <li>
-                        <a href="register.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                        <a href="activity.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
                            <i class="bi bi-list-ul fs-3"></i> Activity
                         </a>
                     </li>
-                       <hr></hr>
 
                     <li>
-                        <a href="settings.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                        <a href="settings.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
                            <i class="bi bi-gear-fill fs-3"></i> Settings
                         </a>
                     </li>
-
-
+                        <br>
                     <li>
-                        <a href="../include/logout.php" class="nav-link py-3 px-2 pt-5" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                        <hr>
+                        <a href="../include/logout.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
                            <i class="bi bi-box-arrow-left fs-3" style = "padding-right:10px; "></i>Logout
                         </a>
                     </li>
@@ -72,7 +74,7 @@ include "../include/session.php";
          <div class="container-xxl">
             <h1>Dashboard</h1>
             <hr> 
-            <a class="btn btn-primary" href="#" role="button">Dashboard</a>
+            <a class="btn" href="#" role="button">Dashboard</a>
             <a class="btn btn-secondary" href="#" role="button">Profile</a>
 
             <div class="pt-5 w-75 mb-3">
