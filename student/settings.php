@@ -295,15 +295,27 @@ $date_updated = date('Y-m-d H:i:s');
 
                                 else{
 
-                                    if(unlink("image/" . $old_image)){
+                                    if(empty($old_image)){
+                                         $run_update_image->execute();
+                                        echo "<script>alert('Sucessfully Updated');</script>";
+                                        header('Location: settings.php');
+                                        $run_update_image->close();
+                                        exit;
+
+
+                                    }
+
+                                    if(!empty($old_image)){
+                                        unlink("image/" . $old_image);
                                         move_uploaded_file($update_filename_tmp, "image/" .  $update_filename);
                                         $run_update_image->execute();
                                         echo "<script>alert('Sucessfully Updated');</script>";
                                         header('Location: settings.php');
                                         $run_update_image->close();
                                         exit;
-                                        
                                     }
+
+                                   
 
                                     
                                     
