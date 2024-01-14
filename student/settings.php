@@ -31,7 +31,7 @@ include "../include/session.php";
                         <br>
                 <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link py-3 px-2 active" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                        <a href="index.php" class="nav-link py-3 px-2 " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
                            <i class="bi bi-house-fill fs-3"></i> DashBoard
                         </a>
                     </li>
@@ -57,7 +57,7 @@ include "../include/session.php";
                     </li>
 
                     <li>
-                        <a href="settings.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                        <a href="settings.php" class="nav-link py-3 px-2 active" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
                            <i class="bi bi-gear-fill fs-3"></i> Settings
                         </a>
                     </li>
