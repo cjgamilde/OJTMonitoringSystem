@@ -309,18 +309,10 @@ $date_updated = date('Y-m-d H:i:s');
                                         unlink("image/" . $old_image);
                                         move_uploaded_file($update_filename_tmp, "image/" .  $update_filename);
                                         $run_update_image->execute();
-                                        echo "<script>alert('Sucessfully Updated');</script>";
                                         header('Location: settings.php');
                                         $run_update_image->close();
                                         exit;
                                     }
-
-                                   
-
-                                    
-                                    
-                                        
-                                     
                                 
                                     
                                 }
@@ -331,38 +323,11 @@ $date_updated = date('Y-m-d H:i:s');
                 
                 
             }
-            else{
-                // insert
-
-                if(isset($_FILES['image'])){
-                     if($_FILES['image']['size'] > 5242880) { 
-                     echo "<script>alert('The file must be 5mb below');</script>";
-                }
-                else{
-                    
-                $insert = $conn->prepare("INSERT INTO `studentinfo`(`studentid`, `image`, `lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `dateTimeCreated`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
-                if ($insert){
-                    $insert->bind_param("issssissssss",$student_id,$new_image,$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$date_created);
-                    if($insert->execute())
-                    {
-                         if (move_uploaded_file($new_image_tmp, "image/" . $new_image)){
-                                 echo "<script>alert('Submited');</script>";
-                                   header('Location: settings.php');
-                                        exit;
-                         }
-                    }
-                   
-                 
-                    $insert->close();
-                }
                 }
 
 
             }
 
-}
-        }
-}
 
 ob_end_flush();
 ?>
