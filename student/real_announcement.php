@@ -5,7 +5,9 @@
 date_default_timezone_set('Asia/Manila');
 
 
- $query = 'SELECT `description` FROM `announcement`';
+ $query = 'SELECT `description` FROM `announcement`  
+ORDER BY id DESC 
+LIMIT 1' ;
     $stmt = $conn->prepare($query);
     $stmt->execute();
     $result = $stmt->get_result();

@@ -57,6 +57,9 @@ include "../include/session.php";
         <div class="col-sm p-3 min-vh-100">
             <!-- content -->
           <div class="container-xxl">
+             <h1>Dashboard</h1>
+            <hr> 
+            </div>
             <div class="row ">
                     <div class="col-lg-6 col-md-6 col-sm-8">
                         <div class="card card-stats">

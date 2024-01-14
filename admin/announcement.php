@@ -100,3 +100,29 @@ include "../include/session.php";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
+
+<?php
+if(isset($_POST['submit'])){
+
+    $content = $_POST['content'];
+$date_created = date('Y-m-d H:i:s');
+$date_updated = date('Y-m-d H:i:s');
+
+$stmt = $conn->prepare("INSERT INTO `announcement`(`description`, `date_time_created`, `date_time_updated`) 
+                        VALUES (?,?,?)");
+
+if($stmt){
+$stmt->bind_param("sss",$content,$date_created,$date_updated);
+$stmt->execute();
+ echo "<script>alert('Sucessfully announce');</script>";
+
+}
+
+
+
+
+}
+
+
+
+?> 
