@@ -12,7 +12,7 @@ include "../include/session.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../src/css/studProfileStyle.css">
+     <!--<link rel="stylesheet" href="../src/css/studProfileStyle.css">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../src/css/studSettingsStyle.css">
@@ -32,39 +32,34 @@ include "../include/session.php";
                 <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
                     <li class="nav-item">
                         <a href="index.php" class="nav-link py-3 px-2 " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
-                           <i class="bi bi-house-fill fs-3"></i> DashBoard
+                           <i class="bi bi-house-fill fs-5"></i> DashBoard
                         </a>
                     </li>
                     <li>
-                        <a href="student_list.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Student List">
-                         <i class="bi bi-folder-fill fs-3"></i> Files
+                        <a href="files.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Student List">
+                         <i class="bi bi-folder-fill fs-5"></i> Files
                         </a>
                     </li>
                     <li>
-                        <a href="announcement.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-clock-fill fs-3"></i> Attendance
-                        </a>
-                    </li>
-                      <li>
-                        <a href="register.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-clipboard-fill fs-3"></i> Progress
+                        <a href="attendance.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                           <i class="bi bi-clock-fill fs-5"></i> Attendance
                         </a>
                     </li>
                     <li>
                         <a href="activity.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-list-ul fs-3"></i> Activity
+                           <i class="bi bi-list-ul fs-5"></i> Activity
                         </a>
                     </li>
 
-                    <li>
-                        <a href="settings.php" class="nav-link py-3 px-2 active" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-gear-fill fs-3"></i> Settings
+                    <li class="nav-item">
+                        <a href="settings.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement" name="settings">
+                           <i class="bi bi-gear-fill fs-5"></i> Settings
                         </a>
                     </li>
                     <li>
                         <hr>
                         <a href="../include/logout.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-box-arrow-left fs-3" style = "padding-right:10px; "></i>Logout
+                           <i class="bi bi-box-arrow-left fs-5" style = "padding-right:10px; "></i>Logout
                         </a>
                     </li>
                 </ul>
@@ -73,9 +68,9 @@ include "../include/session.php";
 
     <div class="col-sm p-3 min-vh-100">
          <div class="container-xxl">
-            <h1>Dashboard</h1>
+            <h1>Settings</h1>
             <hr> 
-            <a class="btn btn-primary" href="settings.php" role="button">Personal Information</a>
+            <a class="btn btn-primary" role="button">Personal Information</a>
             <a class="btn btn-secondary"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" role="button"> Change Password</a>
             <form action="" method="post" enctype="multipart/form-data" name="form">
             <div class="profile-container ">
@@ -146,7 +141,21 @@ include "../include/session.php";
                                 <label for="inputtext6" class="col-form-label">College:</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="college" id="inputtext6" class="form-control" aria-describedby="textHelpInline"value = "<?php echo $row['college'] ?>" >
+                            <select class="form-select" aria-label="Default select example" id="select" name="college">
+                                                    <?php if ($row['college'] == 'SOAST') : ?>
+                                                        <option value="SOAST">SOAST</option>
+                                                        <option value="SOB">SOB</option>
+                                                        <option value="SOTE">SOTE</option>
+                                                    <?php elseif($row['college'] == 'SOB') : ?>
+                                                        <option value="SOB">SOB</option>
+                                                        <option value="SOAST">SOAST</option>
+                                                        <option value="SOTE">SOTE</option>
+                                                    <?php else : ?>
+                                                        <option value="SOTE">SOTE</option>
+                                                        <option value="SOAST">SOAST</option>
+                                                        <option value="SOB">SOB</option>
+                                                    <?php endif; ?>
+                                                </select>
                             </div>
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">Middle Name:</label>
@@ -182,11 +191,15 @@ include "../include/session.php";
                                 <label for="inputtext6" class="col-form-label">Gender:</label>
                             </div>
                             <div class="col-md-5">
-                                <input class="form-control" name="gender" list="datalistOptions" id="exampleDataList" placeholder="Please select your gender below" value = "<?php echo $row['gender'] ?>">
-                                    <datalist id="datalistOptions">
-                                        <option value="Male">
-                                        <option value="Female">
-                                    </datalist>
+                            <select class="form-select" aria-label="Default select example" id="select" name="gender">
+                                                    <?php if ($row['gender'] == 'Male') : ?>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                    <?php else : ?>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Male">Male</option>
+                                                    <?php endif; ?>
+                                                </select>
                             </div>
                             <div class="text-center "> <input type="submit" class="btn btn-primary" name="submit" value="Submit" id="update" disabled >
                         </div>

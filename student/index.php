@@ -30,40 +30,35 @@ include "../include/session.php";
                 <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
                     <li class="nav-item">
                         <a href="index.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard" name="dashboard">
-                           <i class="bi bi-house-fill fs-3"></i> DashBoard
+                           <i class="bi bi-house-fill fs-5"></i> DashBoard
                         </a>
                     </li>
                     <li>
-                        <a href="student_list.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Student List">
-                         <i class="bi bi-folder-fill fs-3"></i> Files
+                        <a href="files.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Student List">
+                         <i class="bi bi-folder-fill fs-5"></i> Files
                         </a>
                     </li>
                     <li>
-                        <a href="announcement.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-clock-fill fs-3"></i> Attendance
-                        </a>
-                    </li>
-                      <li>
-                        <a href="register.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-clipboard-fill fs-3"></i> Progress
+                        <a href="attendance.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                           <i class="bi bi-clock-fill fs-5"></i> Attendance
                         </a>
                     </li>
                     <li>
                         <a href="activity.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-list-ul fs-3"></i> Activity
+                           <i class="bi bi-list-ul fs-5"></i> Activity
                         </a>
                     </li>
 
                     <li>
                         <a href="settings.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-gear-fill fs-3"></i> Settings
+                           <i class="bi bi-gear-fill fs-5"></i> Settings
                         </a>
                     </li>
                         <br>
                     <li>
                         <hr>
                         <a href="../include/logout.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-box-arrow-left fs-3" style = "padding-right:10px; "></i>Logout
+                           <i class="bi bi-box-arrow-left fs-5" style = "padding-right:10px; "></i>Logout
                         </a>
                     </li>
                 </ul>
@@ -72,7 +67,7 @@ include "../include/session.php";
 
  <div class="col-sm p-3 min-vh-100">
          <div class="container-xxl">
-            <h1>Dashboard</h1>
+            <h1>DASHBOARD</h1>
             <hr> 
             <a class="btn" href="#" role="button">Dashboard</a>
             <a class="btn btn-secondary" href="#" role="button">Profile</a>
