@@ -13,7 +13,7 @@ include "../include/connection.php"
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
-    <form method="post" action="">
+    <!-- <form method="post" action="">
 
     <label name="welcome" > WELCOME! </label>
     <label name="regAs" for="type">Register as:</label>
@@ -32,11 +32,13 @@ include "../include/connection.php"
     <input type="password" name="password" required>
     <br>
     <input type="submit" value="SUBMIT" name="submit">
-    </form>
+    </form> -->
 
     
 </body>
 </html>
+
+
 
 <?php
     if (isset($_POST["submit"])) {
@@ -44,6 +46,18 @@ include "../include/connection.php"
         $password = $_POST["password"];
         $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
         $usertype = $_POST["user_types"];
+        
+
+$last_name =null;
+$first_name =null;
+$middle_name =null;
+$contact_number =null;
+$email =null;
+$college =null;
+$year_course =null;
+$birth_date =null;
+$gender =null; 
+$date_created = null;
 
         $result = $conn ->prepare("SELECT count(*) FROM users WHERE username=?");
         if($result){
@@ -67,5 +81,15 @@ include "../include/connection.php"
             }
         }
 
+        if($usertype == 1){
+           $insert_student = $conn->prepare("INSERT INTO `studentinfo`( `studentid`,`lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `dateTimeCreated`) 
+           VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+           if($insert_student){
+            $insert_student->bind_param("isssissssss",$username,$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$date_created);
+            $insert_student->execute();
+           }
+        }
     }
+    
+    
 ?>
