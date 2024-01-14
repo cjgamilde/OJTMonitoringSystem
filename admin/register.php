@@ -13,7 +13,7 @@ include "../include/connection.php"
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
-    <!-- <form method="post" action="">
+     <form method="post" action="">
 
     <label name="welcome" > WELCOME! </label>
     <label name="regAs" for="type">Register as:</label>
@@ -32,7 +32,7 @@ include "../include/connection.php"
     <input type="password" name="password" required>
     <br>
     <input type="submit" value="SUBMIT" name="submit">
-    </form> -->
+    </form>
 
     
 </body>
