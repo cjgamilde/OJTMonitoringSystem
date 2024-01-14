@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2024 at 09:14 AM
+-- Generation Time: Jan 14, 2024 at 10:18 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -139,18 +139,18 @@ CREATE TABLE `practicuminfo` (
 CREATE TABLE `studentinfo` (
   `id` int(225) NOT NULL,
   `studentid` int(50) NOT NULL,
-  `image` varchar(225) NOT NULL,
-  `lastName` varchar(100) NOT NULL,
-  `firstName` varchar(100) NOT NULL,
-  `middleName` varchar(100) NOT NULL,
-  `contactNum` bigint(225) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `college` varchar(100) NOT NULL,
-  `yearProg` varchar(100) NOT NULL,
-  `birthDate` date NOT NULL,
-  `gender` varchar(100) NOT NULL,
-  `dateTimeCreated` datetime(6) NOT NULL,
-  `dateTimeUpdated` datetime(6) NOT NULL
+  `image` varchar(225) DEFAULT NULL,
+  `lastName` varchar(100) DEFAULT NULL,
+  `firstName` varchar(100) DEFAULT NULL,
+  `middleName` varchar(100) DEFAULT NULL,
+  `contactNum` bigint(225) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `college` varchar(100) DEFAULT NULL,
+  `yearProg` varchar(100) DEFAULT NULL,
+  `birthDate` date DEFAULT NULL,
+  `gender` varchar(100) DEFAULT NULL,
+  `dateTimeCreated` datetime(6) DEFAULT NULL,
+  `dateTimeUpdated` datetime(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -201,7 +201,6 @@ CREATE TABLE `usertype` (
 --
 
 INSERT INTO `usertype` (`id`, `description`) VALUES
-(1, 'student'),
 (2, 'admin'),
 (3, 'faculty'),
 (4, 'coordinator');
@@ -257,13 +256,13 @@ ALTER TABLE `announcement`
 -- AUTO_INCREMENT for table `studentinfo`
 --
 ALTER TABLE `studentinfo`
-  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

@@ -73,7 +73,19 @@ $date_created = null;
                 $insert = $conn ->prepare("INSERT INTO `users`(`username`, `password`, `usertype`) VALUES (?,?,?)");
                 if ($insert){
                     $insert->bind_param("ssi", $username, $hashedpassword,$usertype);
-                    $insert->execute();
+                    if($insert->execute()){
+                         if($usertype == 1){
+                     $insert_student = $conn->prepare("INSERT INTO `studentinfo`( `studentid`,`lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `dateTimeCreated`) 
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+                    if($insert_student){
+                        $insert_student->bind_param("isssissssss",$username,$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$date_created);
+                        $insert_student->execute();
+           }
+        }
+
+                    }
+
+
                     echo "<script>alert('Registered');</script>";
                   //  echo "<script>window.location.href='login.php'</script>";
                     $insert->close();
@@ -81,14 +93,7 @@ $date_created = null;
             }
         }
 
-        if($usertype == 1){
-           $insert_student = $conn->prepare("INSERT INTO `studentinfo`( `studentid`,`lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `dateTimeCreated`) 
-           VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-           if($insert_student){
-            $insert_student->bind_param("isssissssss",$username,$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$date_created);
-            $insert_student->execute();
-           }
-        }
+       
     }
     
     
