@@ -3,7 +3,9 @@
 include '../include/connection.php';
 
 
-$result = mysqli_query($conn, "SELECT `image`, `studentid`, `lastName`, `firstName`, `middleName` FROM `studentinfo` ");
+$result = mysqli_query($conn, "SELECT `image`, `studentid`, `lastName`, `firstName`,`college`,`yearProg`,
+ ROW_NUMBER() OVER () AS total
+FROM `studentinfo`");
 $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
