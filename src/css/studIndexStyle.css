@@ -50,3 +50,7 @@
   background-color: yellow;
   color: blue;
 }
+.btn-primary{
+  cursor: not-allowed;
+
+}

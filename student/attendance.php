@@ -67,7 +67,9 @@ include "../include/session.php";
         <div class="col-sm p-3 min-vh-100">
         <div class="container-xxl">
             <h1>ATTENDANCE</h1>
-            <hr> 
+            <hr>
+            <a class="btn btn-primary" role="button">My Attendance</a>
+            <a class="btn btn-secondary" role="button">Timesheet</a> 
             </div>
         </div>
 

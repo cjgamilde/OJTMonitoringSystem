@@ -66,6 +66,7 @@ include "../include/session.php";
         <div class="container-xxl">
             <h1>FILES</h1>
             <hr> 
+            <a class="btn btn-primary" role="button">Requirements</a>
             </div>
         </div>
 

@@ -67,6 +67,7 @@ include "../include/session.php";
         <div class="container-xxl">
             <h1>ACTIVITY</h1>
             <hr> 
+            <a class="btn btn-primary" role="button">My Activities</a>
             </div>
         </div>
 

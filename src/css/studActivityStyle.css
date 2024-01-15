@@ -176,3 +176,7 @@
   right: 150px;
   top: 20px;
   } 
+  .btn-primary{
+    cursor: not-allowed;
+
+  }
