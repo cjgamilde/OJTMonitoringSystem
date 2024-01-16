@@ -1,4 +1,9 @@
 <?php
+session_start();
+date_default_timezone_set('Asia/Manila');
+$username= $_SESSION["username"];
+include "../include/connection.php";
+include "../include/session.php";
 
 ?>
 <!DOCTYPE html>
@@ -140,8 +145,8 @@
 
 
         lengthMenu: [
-          [5, 10, 50, -1],
-          [5, 10, 50, 'All'],
+          [10, 20, 50, -1],
+          [10, 20, 50, 'All'],
         ],
       });
 

@@ -86,8 +86,6 @@ if(isset($_GET['view'])){
             <hr> 
             <form action="" method="post" enctype="multipart/form-data">
             <div class="profile-container ">
-
-            
                   <?php
 
                                         $query = "SELECT * FROM `studentinfo` WHERE studentid = '$student_id'";
@@ -97,23 +95,68 @@ if(isset($_GET['view'])){
                                             foreach ($run as $row) {
                                         ?>
 
-               
 
-                <div class="container text-center">
-                    <div class="row align-items-start">
-                        <div class="col-4"> 
-                            <img src="../student/image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded" style="width: 15rem; height:15rem;" alt="...">
-                        </div>
+
+                                        <div class="container text-center">
+                                        <div class="row align-items-start">
+                                           
+                                            <div class="col-8">
+                                            One of three columns
+                                            </div>
+                                            <div class="col">
+                                            One of three columns
+                                            </div>
+
+                                            
+                                        </div>
+                                        </div>
+
+                                        <div class="container text-center">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                One of three columns
+                                                </div>
+                                                <div class="col">
+                                                One of three columns
+                                                </div>
+                                                
+                                            </div>
+                                            </div>
+
+                                <div class="grid text-left" style="--bs-columns: 18; --bs-gap: .5rem;">
+                                        <div style="grid-column: span 6;"> 
+                                            <img src="../student/image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded shadow" style="width: 15rem; height:15rem;" alt="...">
+                                        </div>
+                                </div>
+
+
                         
-                    </div>
-                </div>
-           
+                                                
 
+                          
+
+
+                    
+
+ 
+            </div>
+
+
+
+
+                        
+                           <!-- <span class = "fw-bolder fs-5 "> <?php echo $row['email'] ?> </span>  
+                          
+                             <p class = "fw-bolder fs-5 lh-1" >  <?php echo $row['firstName']. " " . $row['middleName'] ." ". $row['lastName']  ?> </p>
+                           <span class = "fw-bolder fs-5 "> <?php echo $row['email'] ?> </span>  
+                         -->
+                        
+                    
+            
 
 
              
-        </div>
-        
+      
                     <div class="pt-5">
                 <div class="analytics-container  mb-5 " >
                         <h2>Personal Info</h2>
@@ -195,7 +238,7 @@ if(isset($_GET['view'])){
                                 <label for="inputtext6" class="col-form-label">Gender:</label>
                             </div>
                             <div class="col-md-5">
-                            <select class="form-select" aria-label="Default select example" id="select" name="gender">
+                            <select class="form-select" aria-label="Default select example" id="select" name="gender" readonly>
                                                     <?php if ($row['gender'] == 'Male') : ?>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
@@ -216,8 +259,112 @@ if(isset($_GET['view'])){
               
         </div>
 
-          </div>
-        </div>
+
+
+
+
+
+
+
+                <div class="analytics-container  mb-5 " >
+                        <h2> Practicum info</h2>
+                        <div class="form-check form-switch">
+                        </div>
+                        <hr>
+                
+                <form>
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Company</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3" >
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Company address</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                      <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Department</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                     <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Supervisor Name</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                    
+                     <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Position</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                    
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Contact Number</label>
+                        <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                     <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">OJT Coordinator</label>
+                        <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                     <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Hours Required</label>
+                        <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                     <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Hired Date</label>
+                        <div class="col-sm-10">
+                        <input type="date" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+
+                      <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Start Date</label>
+                        <div class="col-sm-10">
+                        <input type="date" class="form-control" id="inputEmail3">
+                        </div>
+                    </div>
+                   
+                    
+ <div class="text-center "> <input type="submit" class="btn btn-primary" name="submit" value="Submit" id="update"  >
+                </form>
+
+                            
+                    
+
+                
+              
+        
+
+    </div>
+    </div>
 
 
 

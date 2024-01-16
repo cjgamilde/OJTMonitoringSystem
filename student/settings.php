@@ -129,7 +129,7 @@ include "../include/session.php";
                                 <label for="inputtext6" class="col-form-label">Email:</label>
                             </div>
                             <div class="col-md-5">
-                                <input type="text" name="email" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['email'] ?>" >
+                                <input type="email" name="email" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['email'] ?>" >
                             </div>
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">First Name:</label>
