@@ -29,7 +29,7 @@ include "../include/session.php";
                 </a>
                         <h3>Student Portal</h3>
                         <br>
-                <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
+                <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 px-3" style = "align-items:start; text-align:left;">
                     <li class="nav-item">
                         <a href="index.php" class="nav-link py-3 px-2 " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
                            <i class="bi bi-house-fill fs-5"></i> DashBoard
