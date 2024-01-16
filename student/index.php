@@ -69,8 +69,8 @@ include "../include/session.php";
          <div class="container-xxl">
             <h1>DASHBOARD</h1>
             <hr> 
-            <a class="btn btn-primary"  role="button">Dashboard</a>
-            <a class="btn btn-secondary" href="profile.php" role="button">Profile</a>
+            <a class="btn btn-primary" href="index.php" role="button">Dashboard</a>
+            <a class="btn btn-secondary" href="studProfile.php" role="button">Profile</a>
 
             <div class="pt-5 w-75 mb-3">
                 <div class="card">

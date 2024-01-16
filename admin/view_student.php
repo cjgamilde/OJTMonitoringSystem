@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 date_default_timezone_set('Asia/Manila');
 $username= $_SESSION["username"];
@@ -84,6 +85,9 @@ if(isset($_GET['view'])){
           <div class="container-xxl">
             <h1>View Student</h1>
             <hr> 
+            <a class="btn btn-secondary" href="view_student.php?view=<?php echo $student_id?>"  role="button">Student Information</a>
+            <a class="btn btn-secondary" href="files.php" role="button">Files</a>
+
             <form action="" method="post" enctype="multipart/form-data">
             <div class="profile-container ">
                   <?php
@@ -266,38 +270,49 @@ if(isset($_GET['view'])){
 
 
 
-                <div class="analytics-container  mb-5 " >
+                  <div class="analytics-container  mb-5 " >
                         <h2> Practicum info</h2>
                         <div class="form-check form-switch">
                         </div>
                         <hr>
-                
-                <form>
+                 <?php
+                                $query = 'SELECT `company`, `compAddress`, `department`, `supervisorName`, `position`, `email`, `contactNum`, `ojtCoordinator`, `practicumHrsreq`, `hiredDate`, `startDate` FROM `practicuminfo` 
+                                        WHERE studentid = ?';
+                                $stmt = $conn->prepare($query);
+                                $stmt->bind_param('s', $student_id);
+                                $stmt->execute();
+                                $result = $stmt->get_result();
+                                $data = $result->fetch_all(MYSQLI_ASSOC);
+                                foreach ($data as $rows) {
+                              
+
+                                ?>
+                <form action = "" method="post">
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Company</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" >
+                        <input type="text" class="form-control" id="inputEmail3" name="company" value="<?php echo $rows['company']?>" >
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Company address</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3">
+                        <input type="text" class="form-control" id="inputEmail3" name="company_address" value="<?php echo $rows['compAddress'] ?>" >
                         </div>
                     </div>
 
                       <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Department</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3">
+                        <input type="text" class="form-control" id="inputEmail3" name="department" value="<?php echo $rows['department'] ?>">
                         </div>
                     </div>
 
                      <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Supervisor Name</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3">
+                        <input type="text" class="form-control" id="inputEmail3" name="supervisor_name" value="<?php echo $rows['supervisorName'] ?>" >
                         </div>
                     </div>
 
@@ -305,14 +320,14 @@ if(isset($_GET['view'])){
                      <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Position</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3">
+                        <input type="text" class="form-control" id="inputEmail3" name="position" value="<?php echo $rows['position'] ?>" >
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3">
+                        <input type="text" class="form-control" id="inputEmail3" name="email" value="<?php echo $rows['email'] ?>">
                         </div>
                     </div>
 
@@ -320,48 +335,46 @@ if(isset($_GET['view'])){
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Contact Number</label>
                         <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputEmail3">
+                        <input type="number" class="form-control" id="inputEmail3" name="contact_number" value="<?php echo $rows['contactNum'] ?>">
                         </div>
                     </div>
 
                      <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">OJT Coordinator</label>
                         <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputEmail3">
+                        <input type="text" class="form-control" id="inputEmail3" name="ojt_coordinator" value="<?php echo $rows['ojtCoordinator'] ?>">
                         </div>
                     </div>
 
                      <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Hours Required</label>
                         <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputEmail3">
+                        <input type="number" class="form-control" id="inputEmail3" name="hours" value="<?php echo $rows['practicumHrsreq'] ?>" >
                         </div>
                     </div>
 
                      <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Hired Date</label>
                         <div class="col-sm-10">
-                        <input type="date" class="form-control" id="inputEmail3">
+                        <input type="date" name="hired_date" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $rows['hiredDate']; ?>">
                         </div>
                     </div>
 
                       <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Start Date</label>
                         <div class="col-sm-10">
-                        <input type="date" class="form-control" id="inputEmail3">
+                        <input type="date" class="form-control" id="inputEmail3" name="start_date" value="<?php echo $rows['startDate'] ?>">
                         </div>
                     </div>
-                   
-                    
- <div class="text-center "> <input type="submit" class="btn btn-primary" name="submit" value="Submit" id="update"  >
+
+                   <div class="text-center "> <input type="submit" class="btn btn-primary" name="submit" value="Submit" id="update"  >
                 </form>
 
-                            
-                    
+   <?php
+                                }
+   ?>
 
-                
-              
-        
+
 
     </div>
     </div>
@@ -374,3 +387,43 @@ if(isset($_GET['view'])){
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
+
+<?php
+if(isset($_POST['submit'])) {
+
+$company = $_POST['company'];
+$company_address = $_POST['company_address'];
+$department = $_POST['department'];
+$supervisor_name = $_POST['supervisor_name'];
+$position = $_POST['position'];
+$email = $_POST['email'];
+$contact_number = $_POST['contact_number'];
+$ojt_coordinator = $_POST['ojt_coordinator'];
+$hours = $_POST['hours'];
+$hired_date = DateTime::createFromFormat('Y-m-d', $_POST['hired_date'])->format('Y-m-d');
+$start_date = DateTime::createFromFormat('Y-m-d', $_POST['start_date'])->format('Y-m-d');
+$date_updated = date('Y-m-d H:i:s');
+
+$result = $conn ->prepare("SELECT count(*) FROM practicuminfo WHERE studentid =?");
+        if($result){
+            $result->bind_param("s", $student_id);
+            $result->execute(); 
+            $result->bind_result($validation);
+            $result->fetch();
+            $result->close();
+            if ($validation > 0){
+                $update_practicum = $conn->prepare("UPDATE `practicuminfo` SET `company`=?,`compAddress`=?,`department`=?,`supervisorName`=?,`position`=?,`email`=?,`contactNum`=?,`ojtCoordinator`=?,`practicumHrsreq`=?,`hiredDate`=?,`startDate`=?,`dateTimeUpdated`=? WHERE studentid = ?");
+                $update_practicum->bind_param("ssssssisissss",$company,$company_address,$department,$supervisor_name,$position,$email,$contact_number,$ojt_coordinator,$hours,$hired_date,$start_date,$date_updated,$student_id);
+                $update_practicum->execute();
+                 echo "<script>alert('Sucessfully Insert');</script>";
+                 header('Location: view_student.php');
+                 $update_practicum->close();
+                  exit;
+            }
+        }
+
+
+}
+
+ob_end_flush();
+?>
