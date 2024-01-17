@@ -290,11 +290,11 @@ function formatBytes($file_bytes, $precision = 2){
         
 
 
-        "rowCallback": function(row, data, index) {
-          $(row).on('click', function() {
-            window.location.href = 'view_student.php?view=' + data.studentid;
-          });
-        },
+        // "rowCallback": function(row, data, index) {
+        //   $(row).on('click', function() {
+        //     window.location.href = 'view_student.php?view=' + data.studentid;
+        //   });
+        // },
 
 
 
@@ -318,6 +318,49 @@ function formatBytes($file_bytes, $precision = 2){
 
 
   </script>
+
+  <!-- realtime files -->
+
+    <script>
+            $(document).ready(function() {
+                function getData() {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'real_files.php',
+                        success: function(data) {
+                            $('#files').html(data);
+                        }
+                    });
+                }
+                getData();
+                setInterval(function() {
+                    getData();
+                }, 1000); // it will refresh your data every 1 sec
+
+            });
+        </script>
+
+
+<!-- realtime storage -->
+
+  <script>
+            $(document).ready(function() {
+                function getData() {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'real_storage.php',
+                        success: function(data) {
+                            $('#storage').html(data);
+                        }
+                    });
+                }
+                getData();
+                setInterval(function() {
+                    getData();
+                }, 1000); // it will refresh your data every 1 sec
+
+            });
+        </script>
 
 </body>
 </html>
