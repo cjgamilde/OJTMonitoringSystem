@@ -29,7 +29,7 @@ include "../include/session.php";
                         <h3>Student Portal</h3>
                         <br>
                 <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 px-3" style = "align-items:start; text-align:left;">
-                    <li class="nav-item">
+                    <li>
                         <a href="index.php" class="nav-link py-3 px-2 " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
                            <i class="bi bi-house-fill fs-5"></i> DashBoard
                         </a>
@@ -67,7 +67,7 @@ include "../include/session.php";
 
     <div class="col-sm p-3 min-vh-100">
          <div class="container-xxl">
-            <h1>Settings</h1>
+            <h1>SETTINGS</h1>
             <hr> 
             <a class="btn btn-primary" role="button">Personal Information</a>
             <a class="btn btn-secondary"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" role="button"> Change Password</a>
@@ -89,7 +89,7 @@ include "../include/session.php";
                 <div class="container text-center">
                     <div class="row align-items-start">
                         <div class="col-4"> 
-                            <img src="./image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded" style="width: 15rem; height:15rem;" alt="...">
+                            <img src="./image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded" style="width: 10rem; height:10rem;" alt="...">
                              <input type="hidden" name="old_image" value="<?php echo $row['image'] ?>">
                         </div>
                         
@@ -117,26 +117,26 @@ include "../include/session.php";
                     
                           <input type="file" id="file" name="image" accept="image/png, image/jpg, image/jpeg" />
            
-                            <div class="col-auto">
-                                <label for="inputtext6" class="col-form-label">Last Name:</label>
+                            <div class="col-md-2">
+                                <label for="inputtext6" class="col-form-label">Last Name: </label>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <input type="text" name="last_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['lastName'] ?>">
                             </div>
 
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Email:</label>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <input type="email" name="email" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['email'] ?>" >
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">First Name:</label>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <input type="text" name="first_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['firstName'] ?>">
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">College:</label>
                             </div>
                             <div class="col-md-4">
@@ -156,40 +156,40 @@ include "../include/session.php";
                                                     <?php endif; ?>
                                                 </select>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Middle Name:</label>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <input type="text" name="middle_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['middleName'] ?>">
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Year-Course:</label>
                             </div>
                             <div class="col-md-4">
                                 <input type="text" name="year_course" id="inputtext6" placeholder="4th Year-BSIT" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['yearProg'] ?>">
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Student No:</label>
                             </div>
                             <div class="col-md-4">
                                 <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value="<?php echo $student_id ?>" readonly>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">BirthDate:</label>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <input type="date" name="birth_date" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['birthDate'] ?>">
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Contact No:</label>
                             </div>
                             <div class="col-md-4">
                                 <input type="number" name="contact_no" id="inputtext6" class="form-control" aria-describedby="textHelpInline"value = "<?php echo $row['contactNum'] ?>" >
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Gender:</label>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                             <select class="form-select" aria-label="Default select example" id="select" name="gender">
                                                     <?php if ($row['gender'] == 'Male') : ?>
                                                         <option value="Male">Male</option>
