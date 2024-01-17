@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2024 at 10:18 AM
+-- Generation Time: Jan 17, 2024 at 01:46 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -56,7 +56,9 @@ CREATE TABLE `announcement` (
 --
 
 INSERT INTO `announcement` (`id`, `description`, `date_time_created`, `date_time_updated`) VALUES
-(1, 'Sample Announcement', '2024-01-12 09:59:44', '2024-01-12 09:59:44');
+(1, 'Sample Announcement', '2024-01-12 09:59:44', '2024-01-12 09:59:44'),
+(2, 'Sample Announcement2', '2024-01-12 09:59:44', '2024-01-12 09:59:44'),
+(3, 'asdasda', '2024-01-14 21:57:14', '2024-01-14 21:57:14');
 
 -- --------------------------------------------------------
 
@@ -81,6 +83,18 @@ CREATE TABLE `attendance` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `id` int(225) NOT NULL,
+  `file_id` int(225) NOT NULL,
+  `comment` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dashboard`
 --
 
@@ -98,13 +112,20 @@ CREATE TABLE `dashboard` (
 
 CREATE TABLE `files` (
   `id` int(50) NOT NULL,
-  `studentid` int(11) NOT NULL,
+  `studentid` int(50) NOT NULL,
   `reqList` varchar(250) NOT NULL,
-  `submissionDeadline` datetime(6) NOT NULL,
+  `submissionDeadline` date NOT NULL,
   `dateTimeCreated` datetime(6) NOT NULL,
   `dateTimeUpdated` datetime(6) NOT NULL,
   `status` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `files`
+--
+
+INSERT INTO `files` (`id`, `studentid`, `reqList`, `submissionDeadline`, `dateTimeCreated`, `dateTimeUpdated`, `status`) VALUES
+(8, 1903090, 'OJT-Monitoring-System-1.pdf', '2024-01-25', '2024-01-17 18:46:41.000000', '0000-00-00 00:00:00.000000', '1');
 
 -- --------------------------------------------------------
 
@@ -114,21 +135,51 @@ CREATE TABLE `files` (
 
 CREATE TABLE `practicuminfo` (
   `id` int(50) NOT NULL,
-  `studentid` varchar(225) NOT NULL,
-  `company` varchar(100) NOT NULL,
-  `compAddress` varchar(100) NOT NULL,
-  `department` varchar(100) NOT NULL,
-  `supervisorName` varchar(100) NOT NULL,
-  `position` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `contactNum` int(50) NOT NULL,
-  `ojtCoordinator` varchar(100) NOT NULL,
-  `practicumHrsreq` int(100) NOT NULL,
-  `hiredDate` datetime(6) NOT NULL,
-  `startDate` datetime(6) NOT NULL,
-  `dateTimeCreated` datetime(6) NOT NULL,
-  `dateTimeUpdated` datetime(6) NOT NULL
+  `studentid` varchar(225) DEFAULT NULL,
+  `company` varchar(100) DEFAULT NULL,
+  `compAddress` varchar(100) DEFAULT NULL,
+  `department` varchar(100) DEFAULT NULL,
+  `supervisorName` varchar(100) DEFAULT NULL,
+  `position` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `contactNum` int(50) DEFAULT NULL,
+  `ojtCoordinator` varchar(100) DEFAULT NULL,
+  `practicumHrsreq` int(100) DEFAULT NULL,
+  `hiredDate` date DEFAULT NULL,
+  `startDate` date DEFAULT NULL,
+  `dateTimeCreated` datetime(6) DEFAULT NULL,
+  `dateTimeUpdated` datetime(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `practicuminfo`
+--
+
+INSERT INTO `practicuminfo` (`id`, `studentid`, `company`, `compAddress`, `department`, `supervisorName`, `position`, `email`, `contactNum`, `ojtCoordinator`, `practicumHrsreq`, `hiredDate`, `startDate`, `dateTimeCreated`, `dateTimeUpdated`) VALUES
+(1, '1903090', 'Company', 'Company address', 'Department', 'Supervisor Name', 'Position', 'Email', 13123, 'OJT Coordinator', 100, '2024-01-23', '2024-01-27', NULL, '2024-01-17 00:55:37.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status`
+--
+
+CREATE TABLE `status` (
+  `id` varchar(50) NOT NULL,
+  `status` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `status`) VALUES
+('L0', 'I have not started anything regarding OJT'),
+('L1', 'I have applied to HTEs but have not yet been accepted to one'),
+('L2', 'I have been accepted in an HTE but I am still fixing my requirements'),
+('L3', 'I have been accepted in an HTE and have started my training'),
+('L4', 'I am working student and waiting for approval'),
+('L5', 'I am working student and have recieved my credeting approval');
 
 -- --------------------------------------------------------
 
@@ -158,7 +209,7 @@ CREATE TABLE `studentinfo` (
 --
 
 INSERT INTO `studentinfo` (`id`, `studentid`, `image`, `lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `dateTimeCreated`, `dateTimeUpdated`) VALUES
-(2, 1903090, 'received_699050490865588.jpeg', 'Hedy', 'Savannah', 'Amos', 1987, 'Heather', 'Alfonso', 'Bevis', '2018-03-31', 'Male', '2024-01-13 12:29:19.000000', '2024-01-14 16:04:53.000000');
+(2, 1903090, 'received_699050490865588.jpeg', 'Gamit', 'Thaddeus', 'Angeles', 1987, 'thaddeusgamit31@gmail.com', 'SOAST', '4th-year BSIT', '2018-03-31', 'Male', '2024-01-13 12:29:19.000000', '2024-01-16 00:40:19.000000');
 
 -- --------------------------------------------------------
 
@@ -222,6 +273,24 @@ ALTER TABLE `attendance`
   ADD KEY `studentid` (`studentid`);
 
 --
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `practicuminfo`
+--
+ALTER TABLE `practicuminfo`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `studentinfo`
 --
 ALTER TABLE `studentinfo`
@@ -250,19 +319,37 @@ ALTER TABLE `usertype`
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `practicuminfo`
+--
+ALTER TABLE `practicuminfo`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `studentinfo`
 --
 ALTER TABLE `studentinfo`
-  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
