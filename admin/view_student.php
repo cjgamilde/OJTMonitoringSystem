@@ -86,7 +86,7 @@ if(isset($_GET['view'])){
             <h1>View Student</h1>
             <hr> 
             <a class="btn btn-secondary" href="view_student.php?view=<?php echo $student_id?>"  role="button">Student Information</a>
-            <a class="btn btn-secondary" href="files.php" role="button">Files</a>
+            <a class="btn btn-secondary" href="files.php?view=<?php echo $student_id ?>" role="button">Files</a>
 
             <form action="" method="post" enctype="multipart/form-data">
             <div class="profile-container ">
@@ -131,18 +131,7 @@ if(isset($_GET['view'])){
                                         <div style="grid-column: span 6;"> 
                                             <img src="../student/image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded shadow" style="width: 15rem; height:15rem;" alt="...">
                                         </div>
-                                </div>
-
-
-                        
-                                                
-
-                          
-
-
-                    
-
- 
+                            </div>
             </div>
 
 
