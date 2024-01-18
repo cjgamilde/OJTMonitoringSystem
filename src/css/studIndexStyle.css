@@ -46,3 +46,7 @@
   cursor: not-allowed;
 
 }
+.container{
+  height:150px ; /* Set a fixed height for the container */
+  overflow: auto; /* Enable vertical scroll when content exceeds the height */
+}

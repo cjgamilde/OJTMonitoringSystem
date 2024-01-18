@@ -63,37 +63,37 @@ include "../include/session.php";
             </div>
         </div>
         <div class="col-sm p-3 min-vh-100">
-        <div class="container-xxl">
-            <h1>FILES</h1>
-            <hr> 
-            <a class="btn btn-primary" role="button">Requirements</a>
+            <div class="container-xxl">
+                <h1>FILES</h1>
+                <hr> 
+                <a class="btn btn-primary" role="button">Requirements</a>
             </div>
-            <div class="row pt-5">
-                    <div class="card ">
-                        <div class="card-header">
-                            <h4 class="card-title"> Files </h4>
-                        </div>
-                        <div class="card-body">
-                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Send Files
-                            </button>
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                         <th>No</th>
-                                        <th>File Name</th>
-                                        <th>Deadline</th>
-                                        <th>Status</th>
-                                         <th>Action</th>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
+                    <div class="row pt-5 px-2 w-80">
+                            <div class="card ">
+                                <div class="card-header">
+                                    <h4 class="card-title"> Files </h4>
+                                </div>
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Send Files
+                                    </button>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <th>No</th>
+                                                <th>File Name</th>
+                                                <th>Deadline</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-
-                    </div>
-                </div>
 
                 <!-- modal -->
 

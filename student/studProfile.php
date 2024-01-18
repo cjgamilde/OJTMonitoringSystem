@@ -12,12 +12,11 @@ include "../include/session.php";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!--<link rel="stylesheet" href="../src/css/studProfileStyle.css">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../src/css/studSettingsStyle.css">
+    <link rel="stylesheet" href="../src/css/studProfileStyle.css">
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
@@ -33,7 +32,7 @@ include "../include/session.php";
                         <br>
                 <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 px-3" style = "align-items:start; text-align:left;">
                     <li class="nav-item">
-                       <a href="index.php" class="nav-link active " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard" name="dashboard">
+                       <a href="index.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard" name="dashboard">
                            <i class="bi bi-house-fill fs-5"></i> DashBoard
                         </a>
                     </li>
@@ -70,10 +69,10 @@ include "../include/session.php";
 
     <div class="col-sm p-3 min-vh-100">
          <div class="container-xxl">
-            <h1>Settings</h1>
+            <h1>PROFILE</h1>
             <hr> 
             <a class="btn btn-primary" role="button" href="index.php" >DashBoard</a>
-            <a class="btn btn-primary" role="button" href="studProfile.php" >Profile</a>
+            <a class="btn btn-secondary" role="button" href="studProfile.php" >Profile</a>
             <form action="" method="post" enctype="multipart/form-data" name="form">
             <div class="profile-container ">
 
@@ -92,7 +91,7 @@ include "../include/session.php";
                 <div class="container text-center">
                     <div class="row align-items-start">
                         <div class="col-4"> 
-                            <img src="./image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded" style="width: 15rem; height:15rem;" alt="...">
+                            <img src="./image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded" style="width: 10rem; height:10rem;" alt="...">
                                               
                         </div>
                         
@@ -118,26 +117,26 @@ include "../include/session.php";
                                 <label for="inputtext6" class="col-form-label">Last Name:</label>
                             </div>
                             <div class="col-md-5">
-                                <input type="text" name="last_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['lastName'] ?>">
+                                <input type="text" name="last_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['lastName'] ?>" disabled>
                             </div>
 
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">Email:</label>
                             </div>
                             <div class="col-md-5">
-                                <input type="email" name="email" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['email'] ?>" >
+                                <input type="email" name="email" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['email'] ?>" disabled >
                             </div>
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">First Name:</label>
                             </div>
                             <div class="col-md-5">
-                                <input type="text" name="first_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['firstName'] ?>">
+                                <input type="text" name="first_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['firstName'] ?>" disabled>
                             </div>
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">College:</label>
                             </div>
                             <div class="col-md-4">
-                            <select class="form-select" aria-label="Default select example" id="select" name="college">
+                            <select class="form-select" aria-label="Default select example" id="select" name="college" disabled>
                                                     <?php if ($row['college'] == 'SOAST') : ?>
                                                         <option value="SOAST">SOAST</option>
                                                         <option value="SOB">SOB</option>
@@ -157,37 +156,37 @@ include "../include/session.php";
                                 <label for="inputtext6" class="col-form-label">Middle Name:</label>
                             </div>
                             <div class="col-md-5">
-                                <input type="text" name="middle_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['middleName'] ?>">
+                                <input type="text" name="middle_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['middleName'] ?>" disabled>
                             </div>
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">Year-Course:</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="year_course" id="inputtext6" placeholder="4th Year-BSIT" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['yearProg'] ?>">
+                                <input type="text" name="year_course" id="inputtext6" placeholder="4th Year-BSIT" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['yearProg'] ?>" disabled>
                             </div>
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">Student No:</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value="<?php echo $student_id ?>" readonly>
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value="<?php echo $student_id ?>" disabled>
                             </div>
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">BirthDate:</label>
                             </div>
                             <div class="col-md-5">
-                                <input type="date" name="birth_date" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['birthDate'] ?>">
+                                <input type="date" name="birth_date" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['birthDate'] ?>" disabled>
                             </div>
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">Contact No:</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="number" name="contact_no" id="inputtext6" class="form-control" aria-describedby="textHelpInline"value = "<?php echo $row['contactNum'] ?>" >
+                                <input type="number" name="contact_no" id="inputtext6" class="form-control" aria-describedby="textHelpInline"value = "<?php echo $row['contactNum'] ?>" disabled>
                             </div>
                             <div class="col-auto">
                                 <label for="inputtext6" class="col-form-label">Gender:</label>
                             </div>
                             <div class="col-md-5">
-                            <select class="form-select" aria-label="Default select example" id="select" name="gender">
+                            <select class="form-select" aria-label="Default select example" id="select" name="gender" disabled>
                                                     <?php if ($row['gender'] == 'Male') : ?>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
@@ -324,7 +323,8 @@ include "../include/session.php";
     
 
 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

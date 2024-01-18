@@ -72,26 +72,28 @@ include "../include/session.php";
             <a class="btn btn-primary" href="index.php" role="button">Dashboard</a>
             <a class="btn btn-secondary" href="studProfile.php" role="button">Profile</a>
 
-            <div class="pt-5 w-75 mb-3">
+            <div class="pt-5 w-80 mb-3">
                 <div class="card">
                     <div class="card-body">
-                    <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Announcement</span> 
+                    <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Announcement</span>
+                    <hr> 
                         <div class="container" id="announcement"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="pt-3 w-75 mb-3 ">
+            <div class="pt-3 w-80 mb-3 ">
                         <div class="card">
                             <div class="row g-03">
                                 <h5 class="card-title pt-3 px-4">Attendance Report</h5>
                                     <div class="col-md-7">
                                         <canvas id="myChart"></canvas>
                                     </div>
-                                <div class="col-md-3">
+                                <div class="col-md-5">
                                     <div class="card-body" >
-                                        <i class="bi bi-dot align-middle" style = "color:black; font-size:2.5rem;"></i> <span>Total Hours</span>  <span>9</span>
-                                        <i class="bi bi-dot align-middle" style = "color:black; font-size:2.5rem;"></i> <span>Total Hours to Complete</span> <span>480 HRS</span>
+                                        <i class="bi bi-dot align-middle" style = "color:black; font-size:2rem;"></i> <span>Total Hours:</span>  <span>9</span>
+                                        <br>
+                                        <i class="bi bi-dot align-middle" style = "color:black; font-size:2rem;"></i> <span>Total Hours to Complete:</span> <span>480 HRS</span>
                                     </div>
                                 </div>     
                             </div>
