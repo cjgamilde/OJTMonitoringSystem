@@ -147,3 +147,22 @@ h3{
   .analytics-container{
     top: 10px;
   }
+
+  .labels{
+    text-align: left;
+    position: relative;
+    top: 30px;
+    left: -10px;
+    font-size: 20px;
+  }
+  .labels [name="name"]{
+    font-weight: bold;
+    font-size: 25px;
+
+  }
+  .labels2{
+    text-align: left;
+    position: relative;
+    top: 35px;
+    font-size: 20px;
+  }
