@@ -69,7 +69,7 @@ include "../include/session.php";
          <div class="container-xxl">
             <h1>DASHBOARD</h1>
             <hr> 
-            <a class="btn btn-primary" href="index.php" role="button">Dashboard</a>
+            <a class="btn btn-primary" role="button">Dashboard</a>
             <a class="btn btn-secondary" href="studProfile.php" role="button">Profile</a>
 
             <div class="pt-5 w-80 mb-3">
@@ -119,7 +119,7 @@ include "../include/session.php";
                         labels: ['Total Hours completed','Total Hours Remaining'],
                         datasets: [{
                             label: '# of Data', 
-                            data: [360,460],
+                            data: [120,360],
                             borderWidth: 1
                         }]
                     },
