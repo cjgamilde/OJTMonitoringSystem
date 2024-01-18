@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2024 at 01:46 PM
+-- Generation Time: Jan 18, 2024 at 06:45 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -69,16 +69,25 @@ INSERT INTO `announcement` (`id`, `description`, `date_time_created`, `date_time
 CREATE TABLE `attendance` (
   `id` int(50) NOT NULL,
   `studentid` varchar(225) NOT NULL,
-  `date` datetime(6) NOT NULL,
-  `day` datetime(6) NOT NULL,
+  `date` varchar(200) NOT NULL,
+  `day` varchar(100) NOT NULL,
   `clockIn` time(6) NOT NULL,
   `clockOut` time(6) NOT NULL,
   `breakIn` time(6) NOT NULL,
   `breakOut` time(6) NOT NULL,
   `totalHrs` datetime(6) NOT NULL,
+  `latitude` varchar(225) DEFAULT NULL,
+  `longitude` varchar(225) DEFAULT NULL,
   `dateTimeCreated` datetime(6) NOT NULL,
   `dateTimeUpdated` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`id`, `studentid`, `date`, `day`, `clockIn`, `clockOut`, `breakIn`, `breakOut`, `totalHrs`, `latitude`, `longitude`, `dateTimeCreated`, `dateTimeUpdated`) VALUES
+(1, '1903090', 'Jan-18-2024', 'Thursday', '13:15:00.000000', '00:00:00.000000', '00:00:00.000000', '00:00:00.000000', '0000-00-00 00:00:00.000000', '14.6083424', '121.0094596', '2024-01-18 13:15:48.000000', '0000-00-00 00:00:00.000000');
 
 -- --------------------------------------------------------
 
@@ -270,6 +279,7 @@ ALTER TABLE `announcement`
 -- Indexes for table `attendance`
 --
 ALTER TABLE `attendance`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `studentid` (`studentid`);
 
 --
@@ -320,6 +330,12 @@ ALTER TABLE `usertype`
 --
 ALTER TABLE `announcement`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `attendance`
+--
+ALTER TABLE `attendance`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `comment`
