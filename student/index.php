@@ -81,31 +81,22 @@ include "../include/session.php";
                 </div>
             </div>
 
-            <div class="pt-5 w-75 mb-3 ">
-                <div class="card">
-                <div class="row g-03">
-                    <h5 class="card-title pt-3 px-4">Attendance Report</h5>
-                        <div class="col-md-7">
-                            <canvas id="myChart"></canvas>
+            <div class="pt-3 w-75 mb-3 ">
+                        <div class="card">
+                            <div class="row g-03">
+                                <h5 class="card-title pt-3 px-4">Attendance Report</h5>
+                                    <div class="col-md-7">
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                <div class="col-md-3">
+                                    <div class="card-body" >
+                                        <i class="bi bi-dot align-middle" style = "color:black; font-size:2.5rem;"></i> <span>Total Hours</span>  <span>9</span>
+                                        <i class="bi bi-dot align-middle" style = "color:black; font-size:2.5rem;"></i> <span>Total Hours to Complete</span> <span>480 HRS</span>
+                                    </div>
+                                </div>     
+                            </div>
                         </div>
-                    <div class="col-md-3">
-                        <div class="card-body" >
                     
-                            <i class="bi bi-dot align-middle" style = "color:blue; font-size:2.5rem;"></i> <span>Working</span>  <span>9</span>
-                            <i class="bi bi-dot align-middle" style = "color:blue; font-size:2.5rem;"></i> <span>Required</span> <span>10</span>
-                        </div>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                            <p class="border border-primary rounded-pill">2.0 Tardy</p>
-                            <p class="border border-danger rounded-pill">1 Absent</p>
-
-                        </div>
-                       
-                    </div>
-
-                    
-                </div>
-                </div>
-            </div>
 
 
             
@@ -118,24 +109,23 @@ include "../include/session.php";
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  const ctx = document.getElementById('myChart');
+                const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Working','Required'],
-      datasets: [{
-        label: '# of Data', 
-        data: [91,400],
-        borderWidth: 1
-      }]
-    },
-    options: {
-        aspectRatio: 3.5,
-     
-    }
-  });
-</script>
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Total Hours completed','Total Hours Remaining'],
+                        datasets: [{
+                            label: '# of Data', 
+                            data: [360,460],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        aspectRatio: 2,
+                    }
+                });
+            </script>
 
 
  

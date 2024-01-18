@@ -73,22 +73,7 @@ include "../include/session.php";
                          <a class="btn btn-secondary" role="button" href="timesheet.php">Timesheet</a> 
                     </div>
                    
-                        <div class="pt-3 w-75 mb-3 ">
-                        <div class="card">
-                            <div class="row g-03">
-                                <h5 class="card-title pt-3 px-4">Attendance Report</h5>
-                                    <div class="col-md-7">
-                                        <canvas id="myChart"></canvas>
-                                    </div>
-                                <div class="col-md-3">
-                                    <div class="card-body" >
-                                        <i class="bi bi-dot align-middle" style = "color:black; font-size:2.5rem;"></i> <span>Total Hours</span>  <span>9</span>
-                                        <i class="bi bi-dot align-middle" style = "color:black; font-size:2.5rem;"></i> <span>Total Hours to Complete</span> <span>480 HRS</span>
-                                    </div>
-                                </div>     
-                            </div>
-                        </div>
-                    
+
                 
                 
                     <!-- attendance -->
@@ -135,24 +120,7 @@ include "../include/session.php";
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script src="../src/js/time.js"></script>
-        <script>
-                const ctx = document.getElementById('myChart');
 
-                new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Total Hours completed','Total Hours Remaining'],
-                        datasets: [{
-                            label: '# of Data', 
-                            data: [360,460],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        aspectRatio: 2,
-                    }
-                });
-            </script>
 
 
 <!-- get location -->

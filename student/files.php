@@ -68,6 +68,61 @@ include "../include/session.php";
             <hr> 
             <a class="btn btn-primary" role="button">Requirements</a>
             </div>
+            <div class="row pt-5">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h4 class="card-title"> Files </h4>
+                        </div>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Send Files
+                            </button>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                         <th>No</th>
+                                        <th>File Name</th>
+                                        <th>Deadline</th>
+                                        <th>Status</th>
+                                         <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- modal -->
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Insert a file</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label">Get File: </label>
+                                <input class="form-control" type="file" name="files[]" id="formFileMultiple" accept=".doc,.docx,.pdf" multiple required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label">upload Files </label>
+                                <input class="form-control" type="file" name="files[]" id="formFileMultiple" accept=".doc,.docx,.pdf" multiple required>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-secondary" name="save" value="Send">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
 
    
