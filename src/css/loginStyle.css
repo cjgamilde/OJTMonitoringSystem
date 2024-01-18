@@ -28,10 +28,19 @@ body {
  }
  label[name=logAs]{
      position: relative;
+     font-size: 20px;
      top: 17px;
-     left: 170px;
+     left: 160px;
  
  }
+ select[name=user_types]{
+    position: relative;
+    width: 15px;
+    height: 25px;
+    bottom: 5px;
+    border-radius: 3px;
+
+}
  label[name=username]{
      padding: 5px;
      position: relative;
