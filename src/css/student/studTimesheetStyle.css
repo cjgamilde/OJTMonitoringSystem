@@ -12,9 +12,9 @@
           color: white;
 }
 .nav-item [name="attendance"]{
-          border-radius: 8px;
-          margin-top: 4;
-          margin-bottom: 3px;
+         border-radius: 8px;
+         margin-top: 5px;
+         margin-bottom: 10px;
           background-color: blue;
           color: white;
           

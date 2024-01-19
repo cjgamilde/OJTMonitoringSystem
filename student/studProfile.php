@@ -16,7 +16,7 @@ include "../include/session.php";
     <meta name="viewport" content="width=1024">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../src/css/studProfileStyle.css">
+    <link rel="stylesheet" href="../src/css/student/studProfileStyle.css">
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
@@ -76,48 +76,44 @@ include "../include/session.php";
             <form action="" method="post" enctype="multipart/form-data" name="form">
             <div class="profile-container ">
 
-            
-                  <?php
+                    
+                        <?php
 
-                                        $query = "SELECT * FROM `studentinfo` WHERE studentid = '$student_id'";
-                                        $run = mysqli_query($conn, $query);
+                                                $query = "SELECT * FROM `studentinfo` WHERE studentid = '$student_id'";
+                                                $run = mysqli_query($conn, $query);
 
-                                        if (mysqli_num_rows($run) > 0) {
-                                            foreach ($run as $row) {
-                                        ?>
+                                                if (mysqli_num_rows($run) > 0) {
+                                                    foreach ($run as $row) {
+                                                ?>
 
-               
+                    
 
-                <div class="container text-center">
-                    <div class="row justify content-start">
-                        <div class="col-3"> 
-                            <img src="./image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded" style="width: 10rem; height:10rem;" alt="...">           
+                        <div class="container text-center">
+                            <div class="row justify content-start">
+                                <div class="col-3"> 
+                                    <img src="./image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded" style="width: 10rem; height:10rem;" alt="...">           
+                                </div>
+                                <div class="col-5">   
+                                    <div class="labels"> 
+                                                <label type="text" name="name" id="inputtext6" ><?php echo $row['lastName']?>, <?php echo $row['firstName']?> <?php echo $row['middleName']?></label><br>
+                                                <label type="text" name="studentId" id="inputtext6" ><?php echo $row['studentid']?></label> <br>
+                                                <label type="text" name="yearProg" id="inputtext6" ><?php echo $row['yearProg']?></label>       
+                                    </div>                 
+                                </div>
+                                <div class="col-4">   
+                                    <div class="labels2">
+                                        <br>
+                                        <i class="bi bi-envelope-at-fill"> </i> <label type="text" name="email" id="inputtext6" ><?php echo $row['email']?></label> <br>
+                                        <i class="bi bi-telephone-fill"> </i>   <label type="text" name="contact_no" id="inputtext6" ><?php echo $row['contactNum']?></label>       
+
+                                    </div>  
+                                                
+                                </div>
+                                                        
+                            </div>
                         </div>
-                        <div class="col-5">   
-                            <div class="labels"> 
-                                        <label type="text" name="name" id="inputtext6" ><?php echo $row['lastName']?>, <?php echo $row['firstName']?> <?php echo $row['middleName']?></label><br>
-                                        <label type="text" name="studentId" id="inputtext6" ><?php echo $row['studentid']?></label> <br>
-                                        <label type="text" name="yearProg" id="inputtext6" ><?php echo $row['yearProg']?></label>       
-                            </div>                 
-                        </div>
-                        <div class="col-4">   
-                            <div class="labels2">
-                                <br>
-                                <i class="bi bi-envelope-at-fill"> </i> <label type="text" name="email" id="inputtext6" ><?php echo $row['email']?></label> <br>
-                                <i class="bi bi-telephone-fill"> </i>   <label type="text" name="contact_no" id="inputtext6" ><?php echo $row['contactNum']?></label>       
-
-                            </div>  
-                                          
-                        </div>
-                                                 
-                    </div>
-                </div>
-           
-
-
-
              
-        </div>
+                </div>
         
                     <div class="pt-5">
                 <div class="analytics-container  mb-5 " >

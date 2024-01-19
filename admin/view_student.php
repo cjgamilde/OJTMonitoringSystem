@@ -38,7 +38,7 @@ if(isset($_GET['view'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-     <link rel="stylesheet" href="../src/css/studSettingsStyle.css">
+     <link rel="stylesheet" href="../src/css/admin/viewStudentStyle.css">
      <title>Admin Page</title>
 </head>
 <body>
@@ -51,35 +51,45 @@ if(isset($_GET['view'])){
                 <a href="index.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
                    <img src="../src/images/ntclogo.PNG" class="img-fluid" alt="...">
                 </a>
-                <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-left justify-content-between w-100 px-3 align-items-left" style = " align-items:start; text-align: left;">
-                    <li class="nav-item">
-                        <a href="index.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
-                           <i class="bi bi-house-fill fs-3"></i> DashBoard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="student_list.php" class="nav-link py-3 px-2 active" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Student List">
-                         <i class="bi bi-person-lines-fill fs-3"></i> Student List
-                        </a>
-                    </li>
-                    <li>
-                        <a href="announcement.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-megaphone-fill fs-3"></i> Announcement
-                        </a>
-                    </li>
-                      <li>
-                        <a href="register.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-person-fill-add fs-3"></i>Register
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../include/logout.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
-                           <i class="bi bi-box-arrow-left fs-3" style = "padding-right:10px;"></i>Logout
-                        </a>
-                    </li>
-                </ul>
+                <h3> Admin Portal</h3>
+                            <br>
+                    <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 px-3" style = "align-items:start; text-align:left;">
+                        <li class="nav-item">
+                            <a href="index.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard" name="dashboard">
+                            <i class="bi bi-house-fill fs-3"></i> DashBoard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="student_list.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Student List" name="studentlist">
+                            <i class="bi bi-person-lines-fill fs-3"></i> Student List
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="announcement.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement" name="announcement">
+                            <i class="bi bi-megaphone-fill fs-3"></i> Announcement
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="register.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement" name="register">
+                            <i class="bi bi-person-fill-add fs-3"></i> Register
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="settings.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement" name="settings">
+                            <i class="bi bi-gear-fill fs-3"></i> Settings
+                            </a>
+                        </li>
+                            <br>
+                        <li>
+                            <hr>
+                            <a href="../include/logout.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement">
+                            <i class="bi bi-box-arrow-left fs-55" style = "padding-right:10px; "></i>Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
         <div class="col-sm p-3 min-vh-100">
             <!-- content -->
           <div class="container-xxl">
@@ -100,38 +110,30 @@ if(isset($_GET['view'])){
                                         ?>
 
 
+<div class="container text-center">
+                            <div class="row justify content-start">
+                                <div class="col-3"> 
+                                <img src="../student/image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded" style="width: 10rem; height:10rem;" alt="...">           
+                                </div>
+                                <div class="col-5">   
+                                    <div class="labels"> 
+                                                <label type="text" name="name" id="inputtext6" ><?php echo $row['lastName']?>, <?php echo $row['firstName']?> <?php echo $row['middleName']?></label><br>
+                                                <label type="text" name="studentId" id="inputtext6" ><?php echo $row['studentid']?></label> <br>
+                                                <label type="text" name="yearProg" id="inputtext6" ><?php echo $row['yearProg']?></label>       
+                                    </div>                 
+                                </div>
+                                <div class="col-4">   
+                                    <div class="labels2">
+                                        <br>
+                                        <i class="bi bi-envelope-at-fill"> </i> <label type="text" name="email" id="inputtext6" ><?php echo $row['email']?></label> <br>
+                                        <i class="bi bi-telephone-fill"> </i>   <label type="text" name="contact_no" id="inputtext6" ><?php echo $row['contactNum']?></label>       
 
-                                        <div class="container text-center">
-                                        <div class="row align-items-start">
-                                           
-                                            <div class="col-8">
-                                            One of three columns
-                                            </div>
-                                            <div class="col">
-                                            One of three columns
-                                            </div>
-
-                                            
-                                        </div>
-                                        </div>
-
-                                        <div class="container text-center">
-                                            <div class="row align-items-center">
-                                                <div class="col">
-                                                One of three columns
-                                                </div>
-                                                <div class="col">
-                                                One of three columns
-                                                </div>
+                                    </div>  
                                                 
-                                            </div>
-                                            </div>
-
-                                <div class="grid text-left" style="--bs-columns: 18; --bs-gap: .5rem;">
-                                        <div style="grid-column: span 6;"> 
-                                            <img src="../student/image/<?php echo$row['image'] ?> " class="img-fluid rounded-circle rounded shadow" style="width: 15rem; height:15rem;" alt="...">
-                                        </div>
+                                </div>
+                                                        
                             </div>
+                        </div>
             </div>
 
 
@@ -158,30 +160,30 @@ if(isset($_GET['view'])){
                         <hr>
                     
                     <div class="row g-3 align-items-center">
-                            <div class="col-auto">
+                    <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Last Name:</label>
                             </div>
-                            <div class="col-md-5">
-                                <input type="text" name="last_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['lastName'] ?>" readonly>
+                            <div class="col-md-4">
+                                <input type="text" name="last_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['lastName'] ?>" disabled>
                             </div>
 
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Email:</label>
                             </div>
-                            <div class="col-md-5">
-                                <input type="text" name="email" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['email'] ?>" readonly >
+                            <div class="col-md-4">
+                                <input type="email" name="email" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['email'] ?>" disabled >
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">First Name:</label>
                             </div>
-                            <div class="col-md-5">
-                                <input type="text" name="first_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['firstName'] ?>" readonly>
+                            <div class="col-md-4">
+                                <input type="text" name="first_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['firstName'] ?>" disabled>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">College:</label>
                             </div>
                             <div class="col-md-4">
-                            <select class="form-select" aria-label="Default select example" id="select" name="college" readonly>
+                            <select class="form-select" aria-label="Default select example" id="select" name="college" disabled>
                                                     <?php if ($row['college'] == 'SOAST') : ?>
                                                         <option value="SOAST">SOAST</option>
                                                         <option value="SOB">SOB</option>
@@ -197,41 +199,41 @@ if(isset($_GET['view'])){
                                                     <?php endif; ?>
                                                 </select>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Middle Name:</label>
                             </div>
-                            <div class="col-md-5">
-                                <input type="text" name="middle_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['middleName'] ?>" readonly>
+                            <div class="col-md-4">
+                                <input type="text" name="middle_name" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['middleName'] ?>" disabled>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Year-Course:</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="year_course" id="inputtext6" placeholder="4th Year-BSIT" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['yearProg'] ?>" readonly>
+                                <input type="text" name="year_course" id="inputtext6" placeholder="4th Year-BSIT" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['yearProg'] ?>" disabled>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Student No:</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value="<?php echo $student_id ?>" readonly>
+                                <input type="text" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value="<?php echo $student_id ?>" disabled>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">BirthDate:</label>
                             </div>
-                            <div class="col-md-5">
-                                <input type="date" name="birth_date" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['birthDate'] ?>" readonly>
+                            <div class="col-md-4">
+                                <input type="date" name="birth_date" id="inputtext6" class="form-control" aria-describedby="textHelpInline" value = "<?php echo $row['birthDate'] ?>" disabled>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Contact No:</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="number" name="contact_no" id="inputtext6" class="form-control" aria-describedby="textHelpInline"value = "<?php echo $row['contactNum'] ?>" readonly >
+                                <input type="number" name="contact_no" id="inputtext6" class="form-control" aria-describedby="textHelpInline"value = "<?php echo $row['contactNum'] ?>" disabled>
                             </div>
-                            <div class="col-auto">
+                            <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Gender:</label>
                             </div>
-                            <div class="col-md-5">
-                            <select class="form-select" aria-label="Default select example" id="select" name="gender" readonly>
+                            <div class="col-md-4">
+                            <select class="form-select" aria-label="Default select example" id="select" name="gender" disabled>
                                                     <?php if ($row['gender'] == 'Male') : ?>
                                                         <option value="Male">Male</option>
                                                         <option value="Female">Female</option>
