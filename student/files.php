@@ -68,24 +68,18 @@ include "../include/session.php";
                 <hr> 
                 <a class="btn btn-primary" role="button">Requirements</a>
             </div>
-                    <div class="row pt-5 px-2 w-80">
+                    <div class="row pt-3 px-2 w-80">
                             <div class="card ">
                                 <div class="card-header">
-                                    <h4 class="card-title"> Files </h4>
+                                    <h4 class="card-title"> Requirements List </h4>
                                 </div>
                                 <div class="card-body">
-                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Send Files
+                                  <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Send Files -->
                                     </button>
                                     <div class="table-responsive">
                                         <table class="table table-hover">
-                                            <thead>
-                                                <th>No</th>
-                                                <th>File Name</th>
-                                                <th>Deadline</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
-                                            </thead>
+
                                             <tbody>
                                             </tbody>
                                         </table>

@@ -72,7 +72,7 @@ include "../include/session.php";
             <a class="btn btn-primary" role="button">DashBoard</a>
             <a class="btn btn-secondary" href="studProfile.php" role="button">Profile</a>
 
-            <div class="pt-5 w-80 mb-3">
+            <div class="pt-3 w-80 mb-3">
                 <div class="card">
                     <div class="card-body">
                     <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Announcement</span>
