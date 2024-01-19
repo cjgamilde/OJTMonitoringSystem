@@ -96,24 +96,7 @@
   .profile-container input{
     display: none;
   }
-  .profile-container label{
-    padding: 10px 0;
-    height: 80px; 
-    width: 100px;
-    border-radius: 500px;
-    margin: 10px 0 20px 0;
-    border: 1px dashed black;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  .profile-container label:hover{
-    color: rgb(66,66,66);
-    border: 1px dashed  rgb(66, 66, 66);
-  }
+
   .info-container{
     position: relative;
     top: 20px;
@@ -136,4 +119,23 @@
   .btn-primary{
     cursor: not-allowed;
 
+  }
+
+  .labels{
+    text-align: left;
+    position: relative;
+    top: 30px;
+    left: -10px;
+    font-size: 20px;
+  }
+  .labels [name="name"]{
+    font-weight: bold;
+    font-size: 25px;
+
+  }
+  .labels2{
+    text-align: left;
+    position: relative;
+    top: 35px;
+    font-size: 20px;
   }
