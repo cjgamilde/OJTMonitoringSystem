@@ -16,7 +16,7 @@ include "../include/session.php";
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
-
+ <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <!--sidebar-->
 <div class="container-fluid">
     <div class="row">
@@ -72,28 +72,32 @@ include "../include/session.php";
             <a class="btn btn-secondary" role="button">Timesheet</a> 
             </div>
             <br>
-            <div class="row pt-1 px-2 w-80">
-                            <div class="card ">
-                                <div class="card-header">
-                                    <h4 class="card-title"> Timesheet </h4>
-                                </div>
-                                <div class="card-body">
-                                  <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Send Files -->
-                                    </button>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <th>Date</th>
-                                                <th>Day</th>
-                                                <th>Time In</th>
-                                                <th>Time Out</th>
-                                                <th>Location</th>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                        </table>
-                                    </div>
+           <div class="row pt-5">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h4 class="card-title"> Files </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <h3>TimeSheet</h3>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <th>No</th>
+                                        <th>DATE</th>
+                                        <th>DAY</th>
+                                        <th>IN</th>
+                                        <th>OUT</th>
+                                        <th>HOURS</th>
+                                        <th>LOCATION</th>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
                                 </div>
 
                             </div>
@@ -101,8 +105,89 @@ include "../include/session.php";
 
 
         
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-1.13.8/datatables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<!-- datatable -->
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+      var dataTable = $('table').DataTable({
+        "ajax": "get_attendance.php", // URL to server-side script that returns JSON data
+        
+        "columns": [
+            {
+                "data": "total"
+            },
+
+         {
+            "data": "date",
+                "render": function (data, type, row) {
+                    // Assuming 'joining_date' is in 'YYYY-MM-DD' format
+                    var date = new Date(data);
+                    return date.toLocaleDateString("en-US", { month: 'long', day: 'numeric', year: 'numeric' });
+                }
+        },
+
+         {
+                "data": "day"
+            },
+
+             {
+                "data": "clockIn"
+            },
+           {
+                "data": "clockOut"
+            },
+            {
+                "data":"totalHrs"
+            },
+            {
+                "data":"location"
+            }
+          
+
+        ],
+
+        
+
+
+        // "rowCallback": function(row, data, index) {
+        //   $(row).on('click', function() {
+        //     window.location.href = 'view_student.php?view=' + data.studentid;
+        //   });
+        // },
+
+
+
+
+        lengthMenu: [
+          [10, 20, 50, -1],
+          [10, 20, 50, 'All'],
+        ],
+      });
+
+       
+
+
+
+
+      $('.dataTables_filter input').attr('maxLength', 16),
+        setInterval(function() {
+          dataTable.ajax.reload(null, false); // Reload table data every 5 seconds
+        }, 5000);
+    });
+
+
+  </script>
+
+
+
+
+
+
 </body>
-</html>
+</html> 

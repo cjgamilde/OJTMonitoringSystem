@@ -188,6 +188,7 @@ function formatBytes($file_bytes, $precision = 2){
                                 Send Files
                             </button>
                             <div class="table-responsive">
+                                <h3>Files</h3>
                                 <table class="table table-hover">
                                     <thead>
                                          <th>No</th>

@@ -29,6 +29,10 @@ if(isset($_GET['view'])){
 }
 
 
+
+
+
+
 ?>
 
 <!DOCTYPE html>

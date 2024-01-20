@@ -5,6 +5,46 @@ date_default_timezone_set('Asia/Manila');
 include "../include/connection.php";
 include "../include/session.php";
 
+
+
+function reverseGeocode($lat, $long, $apiKey) {
+    // LocationIQ Reverse Geocoding API endpoint
+    $apiEndpoint = 'https://us1.locationiq.com/v1/reverse.php';
+
+    // Prepare parameters
+    $params = [
+        'key' => $apiKey,
+        'lat' => $lat,
+        'lon' => $long,
+        'format' => 'json',
+    ];
+
+    // Build the query string
+    $queryString = http_build_query($params);
+
+    // Final URL
+    $url = $apiEndpoint . '?' . $queryString;
+
+    // Make a request to the API
+    $response = file_get_contents($url);
+
+    // Decode JSON response
+    $data = json_decode($response, true);
+
+    // Check if the request was successful
+    if (!empty($data['display_name'])) {
+        // Extract the formatted address
+        $formattedAddress = $data['display_name'];
+
+        return $formattedAddress;
+    } else {
+        // Handle errors
+        return 'Error in reverse geocoding';
+    }
+}
+
+
+
 ?>
 <html lang="en">
 <head>
@@ -196,14 +236,20 @@ $date_created = date('Y-m-d H:i:s');
 
 
 
-// $lunch_in = date("H:i",strtotime("now"));
-// $lunch_out = date("H:i",strtotime("now"));
+
+
 // $time_out = date("H:i",strtotime("now"));
 
 if(isset($_POST['time_in'])){
+
     $time_in = date("H:i",strtotime("now"));
     $lat = $_POST['lat'];
     $long = $_POST['long'];
+
+$apiKey = 'pk.d8d3ca397b99f97ab437ee33354cda16'; // Replace with your LocationIQ API key
+
+$location = reverseGeocode($lat, $long, $apiKey);
+
 
 
     // validation prevent for double send
@@ -223,15 +269,155 @@ if(isset($_POST['time_in'])){
 
     else{
          // insert
-    $insert_timein = $conn->prepare("INSERT INTO `attendance`(`studentid`, `date`, `day`, `clockIn`, `latitude`, `longitude`, `dateTimeCreated`) VALUES (?,?,?,?,?,?,?)");
-    $insert_timein->bind_param("sssssss",$student_id,$date,$day,$time_in,$lat,$long,$date_created);
+    $insert_timein = $conn->prepare("INSERT INTO `attendance`(`studentid`, `date`, `day`, `clockIn`, `latitude`, `longitude`,`location`, `dateTimeCreated`) VALUES (?,?,?,?,?,?,?,?)");
+    $insert_timein->bind_param("ssssssss",$student_id,$date,$day,$time_in,$lat,$long,$location,$date_created);
     $insert_timein->execute();
+      echo "<script>alert('Sucessfully Time in');</script>";
     }
 
 
    
 
 
+}
+
+if(isset($_POST['lunch_in'])){
+    $lunch_in = date("H:i",strtotime("now"));
+
+    $time_in = date("H:i",strtotime("now"));
+    $lat = $_POST['lat'];
+    $long = $_POST['long'];
+
+$apiKey = 'pk.d8d3ca397b99f97ab437ee33354cda16'; // Replace with your LocationIQ API key
+
+$location = reverseGeocode($lat, $long, $apiKey);
+
+    //validation
+  $valid_lucnhin = $conn->prepare("SELECT count(*) FROM attendance WHERE`studentid` = ? AND `breakIn`= ?");
+    $valid_lucnhin->bind_param("ss",$student_id,$lunch_in);
+    $valid_lucnhin->execute();
+    $valid_lucnhin->bind_result($validation_lunchin);
+    $valid_lucnhin->fetch();
+    $valid_lucnhin->close();
+        
+
+    if($validation_lunchin > 0){
+          echo "<script>alert('Already have a attendance');</script>";
+          return false;
+
+    }
+
+    else{
+
+        // lunch in
+
+    $insert_lunchin = $conn->prepare("UPDATE `attendance` SET `breakIn`=?,`latitude`=?,`longitude`=?,`location`=? WHERE `studentid` =?");
+    $insert_lunchin->bind_param("sssss",$lunch_in,$lat,$long,$location,$student_id);
+    $insert_lunchin->execute();
+     echo "<script>alert('Sucessfully Lunch in');</script>";
+        
+    }
+
+
+
+
+
+
+}
+
+// lunch out
+
+if(isset($_POST['lunch_out'])){
+
+    $lunch_out = date("H:i",strtotime("now"));
+    $lat = $_POST['lat'];
+    $long = $_POST['long'];
+    $apiKey = 'pk.d8d3ca397b99f97ab437ee33354cda16'; // Replace with your LocationIQ API key
+    $location = reverseGeocode($lat, $long, $apiKey);
+
+    //validation
+
+    $valid_lunchout = $conn->prepare("SELECT count(*) FROM attendance WHERE`studentid` = ? AND `breakOut`= ?");
+    $valid_lunchout->bind_param("ss",$student_id,$lunch_out);
+    $valid_lunchout->execute();
+    $valid_lunchout->bind_result($validation_lunchout);
+    $valid_lunchout->fetch();
+    $valid_lunchout->close();
+
+    if($validation_lunchout > 0 ){
+          echo "<script>alert('Already have a attendance');</script>";
+          return false;
+
+    }
+    else{
+        $insert_lunchout = $conn->prepare("UPDATE `attendance` SET `breakOut`=?,`latitude`=?,`longitude`=?,`location`=? WHERE `studentid` =?");
+        $insert_lunchout->bind_param("sssss",$lunch_out,$lat,$long,$location,$student_id);
+        $insert_lunchout->execute();
+         echo "<script>alert('Sucessfully Lunch out');</script>";
+        }
+}
+
+
+// time out
+if(isset($_POST["time_out"])){
+$time_out = date("H:i",strtotime("now"));
+ $lat = $_POST['lat'];
+    $long = $_POST['long'];
+    $apiKey = 'pk.d8d3ca397b99f97ab437ee33354cda16'; // Replace with your LocationIQ API key
+    $location = reverseGeocode($lat, $long, $apiKey);
+
+    
+ //validation
+
+    $valid_timeout = $conn->prepare("SELECT count(*) FROM attendance WHERE`studentid` = ? AND `clockOut`= ?");
+    $valid_timeout->bind_param("ss",$student_id,$time_out);
+    $valid_timeout->execute();
+    $valid_timeout->bind_result($validation_timeout);
+    $valid_timeout->fetch();
+    $valid_timeout->close();
+
+    if($validation_timeout > 0 ){
+          echo "<script>alert('Already have a attendance');</script>";
+          return false;
+
+    }
+    else{
+        
+ $insert_timeout = $conn->prepare("UPDATE `attendance` SET `clockOut`=?,`latitude`=?,`longitude`=?,`location`=? WHERE `studentid` =?");
+        $insert_timeout->bind_param("sssss",$time_out,$lat,$long,$location,$student_id);
+        if($insert_timeout->execute()){
+
+            // computing of hour
+             $query_hour = "SELECT `clockIn`, `clockOut`, `breakIn`, `breakOut` FROM `attendance` WHERE `studentid` = '$student_id' AND `date` = '$date' ";
+          $run_query_hour = mysqli_query($conn, $query_hour);
+
+            if(mysqli_num_rows($run_query_hour) > 0){
+              foreach($run_query_hour as $row){
+                $diff_time = round(abs(strtotime($row['clockIn']) - strtotime($row['clockOut'])) / 3600,2);
+                $diff_lunch = round(abs(strtotime($row['breakIn']) - strtotime($row['breakOut'])) / 3600,2);
+            
+
+                  $total_hour = $diff_time - $diff_lunch;
+
+                
+                  
+                
+               $insert_hour = "UPDATE `attendance` SET `totalHrs` = '$total_hour' WHERE `studentid` ='$student_id' AND date = '$date'";
+               $run_hour = mysqli_query($conn, $insert_hour);
+
+               if($run_hour){
+                echo "<script> alert('Succesfully time out')</script>";
+
+               }
+
+
+
+              }
+
+            }
+        }
+    }
+    
 }
 
 ?>
