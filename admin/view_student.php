@@ -407,7 +407,7 @@ $result = $conn ->prepare("SELECT count(*) FROM practicuminfo WHERE studentid =?
                 $update_practicum->bind_param("ssssssisissss",$company,$company_address,$department,$supervisor_name,$position,$email,$contact_number,$ojt_coordinator,$hours,$hired_date,$start_date,$date_updated,$student_id);
                 $update_practicum->execute();
                  echo "<script>alert('Sucessfully Insert');</script>";
-                 header('Location: view_student.php');
+                 header('Location: view_student.php?view='.$student_id);
                  $update_practicum->close();
                   exit;
             }

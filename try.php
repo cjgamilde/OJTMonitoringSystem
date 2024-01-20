@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,3 +36,28 @@
     </form>
 </body>
 </html>
+ -->
+
+
+ <?php
+ function getaddress($lat,$lng)
+  {
+     $url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='.trim($lat).','.trim($lng).'&sensor=false';
+     $json = @file_get_contents($url);
+     $data=json_decode($json);
+     $status = $data->status;
+     if($status=="OK")
+     {
+       echo $data->results[0]->formatted_address;
+     }
+     else
+     {
+       return false;
+     }
+  }
+getaddress(14.6083424,121.0094596);
+
+
+
+
+?>

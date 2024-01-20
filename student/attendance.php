@@ -83,7 +83,7 @@ include "../include/session.php";
                         <div class="card-body">
                            <form action = ""  method="post">
                                 <h2 class="visually-hidden">Login Form</h2>
-                                <div class="text-center"><i class="icon ion-ios-time-outline " style = "font-size:100px;"></i>
+                                <div class="text-center"><i class="bi bi-clock"  style = "font-size:100px;"></i>
                                     <h2 id = "time" ></h2>
                                         </div>
                                     <div class="mb-3">
