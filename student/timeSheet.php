@@ -64,7 +64,7 @@ include "../include/session.php";
                 </ul>
             </div>
         </div>
-        <div class="col-sm p-3 min-vh-100">
+        <div class=" row col-sm p-3 min-vh-100">
         <div class="container-xxl">
             <h1>TIMESHEET</h1>
             <hr>
@@ -98,10 +98,14 @@ include "../include/session.php";
 
                     </div>
                 </div>
-                                </div>
+        </div>
+    </div>
 
-                            </div>
-                        </div>
+        </div>
+
+        </div>
+        </div>
+
 
 
         
