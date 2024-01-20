@@ -131,6 +131,7 @@ include "../include/session.php";
                    <label for="file">Upload Photo</label>
                     
                           <input type="file" id="file" name="image" accept="image/png, image/jpg, image/jpeg" />
+                          <input type="hidden" name="old_image" value="<?php echo $row['image'] ?>">
            
                             <div class="col-md-2">
                                 <label for="inputtext6" class="col-form-label">Last Name: </label>
@@ -279,6 +280,7 @@ $date_updated = date('Y-m-d H:i:s');
     $old_image = $_POST['old_image'];
 
     
+    
 
  $result = $conn ->prepare("SELECT count(*) FROM studentinfo WHERE studentid =?");
         if($result){
@@ -292,6 +294,8 @@ $date_updated = date('Y-m-d H:i:s');
                    if ($new_image != '') {
                             $update_filename = $_FILES['image']['name'];
                             $update_filename_tmp = $_FILES['image']['tmp_name'];
+
+                             move_uploaded_file($update_filename_tmp, "image/" .  $update_filename);
                         } else {
                             $update_filename = $old_image;
                         } 
@@ -334,7 +338,7 @@ $date_updated = date('Y-m-d H:i:s');
 
                                     if(!empty($old_image)){
                                         unlink("image/" . $old_image);
-                                        move_uploaded_file($update_filename_tmp, "image/" .  $update_filename);
+                                         echo "<script>alert('Sucessfully Updated');</script>";
                                         $run_update_image->execute();
                                         header('Location: settings.php');
                                         $run_update_image->close();
@@ -350,7 +354,10 @@ $date_updated = date('Y-m-d H:i:s');
                 
                 
             }
+            
                 }
+
+               
 
 
             }
