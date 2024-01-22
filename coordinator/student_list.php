@@ -16,18 +16,18 @@ include "../include/session.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../src/css/admin/studentListStyle.css">
 
-    <title>Admin Page</title>
+    <title>COORDINATOR</title>
 </head>
 <body>
       <script src="https://code.jquery.com/jquery-3.7.0.js" ></script>
-    <div class="container-fluid">
+      <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-auto bg-light sticky-top">
-            <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
-                <a href="/" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+        <div class="col-sm-auto bg-white sticky-top shadow">
+            <div class="d-flex flex-sm-column flex-row flex-nowrap bg-white align-items-center sticky-top">
+                <a href="index.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
                    <img src="../src/images/ntclogo.PNG" class="img-fluid" alt="...">
                 </a>
-                <h3> Admin Portal</h3>
+                <h3> Coordinator Portal</h3>
                             <br>
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 px-3" style = "align-items:start; text-align:left;">
                         <li class="nav-item">
@@ -40,18 +40,18 @@ include "../include/session.php";
                             <i class="bi bi-person-lines-fill fs-3"></i> Student List
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li>
                             <a href="announcement.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement" name="announcement">
                             <i class="bi bi-megaphone-fill fs-3"></i> Announcement
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a href="register.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement" name="register">
                             <i class="bi bi-person-fill-add fs-3"></i> Register
                             </a>
-                        </li>
+                        </li>-->
 
-                        <li class="nav-item">
+                        <li>
                             <a href="settings.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement" name="settings">
                             <i class="bi bi-gear-fill fs-3"></i> Settings
                             </a>

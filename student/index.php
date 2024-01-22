@@ -72,12 +72,25 @@ include "../include/session.php";
             <a class="btn btn-primary" role="button">DashBoard</a>
             <a class="btn btn-secondary" href="studProfile.php" role="button">Profile</a>
 
-            <div class="pt-3 w-80 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                    <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Announcement</span>
-                    <hr> 
-                        <div class="container" id="announcement"></div>
+            <div class="row pt-2 g-2 text-center">
+                <div class="col-2" style="width: 500px;">
+                    <div class="card">
+                        <div class="card-body">
+                        <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Announcement</span>
+                        <hr> 
+                            <div class="container" id="announcement"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2" style="width: 500px;">
+                    <div class="card">
+                        <div class="card-body">
+                        <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Student Status</span>
+                        <hr> 
+                            <div class="container" id="announcement">
+                                <h4>HTE STATUS:</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

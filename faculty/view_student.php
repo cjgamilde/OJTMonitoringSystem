@@ -43,7 +43,7 @@ if(isset($_GET['view'])){
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
      <link rel="stylesheet" href="../src/css/admin/viewStudentStyle.css">
-     <title>Admin Page</title>
+     <title>FACULTY</title>
 </head>
 <body>
     
@@ -55,7 +55,7 @@ if(isset($_GET['view'])){
                 <a href="index.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
                    <img src="../src/images/ntclogo.PNG" class="img-fluid" alt="...">
                 </a>
-                <h3> Admin Portal</h3>
+                <h3>Faculty Portal</h3>
                             <br>
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 px-3" style = "align-items:start; text-align:left;">
                         <li class="nav-item">
@@ -73,11 +73,11 @@ if(isset($_GET['view'])){
                             <i class="bi bi-megaphone-fill fs-3"></i> Announcement
                             </a>
                         </li>
-                        <li class="nav-item">
+                       <!-- <li class="nav-item">
                             <a href="register.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement" name="register">
                             <i class="bi bi-person-fill-add fs-3"></i> Register
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="nav-item">
                             <a href="settings.php" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Announcement" name="settings">
