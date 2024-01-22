@@ -481,7 +481,7 @@ $insert_files = $conn->prepare("INSERT INTO `files`(`studentid`, `reqList`, `sub
         $tmp_name = $_FILES['files']['tmp_name'][$index];
 
          // Move the uploaded file to a destination directory
-        $upload_directory = "files/";
+        $upload_directory = "../admin/files/";
         $destination = $upload_directory . $filename;
 
         
