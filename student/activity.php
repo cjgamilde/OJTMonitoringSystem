@@ -4,35 +4,18 @@ $student_id = $_SESSION["username"];
 date_default_timezone_set('Asia/Manila');
 include "../include/connection.php";
 include "../include/session.php";
-
-
-/*function $insert_activity($conn,$username){
-
-    $date =null;
-    $file =null;
-    $hours =null;
-    $date_created = date('Y-m-d H:i:s');
-    
-          $insert_activity = $conn->prepare("INSERT INTO `studentinfo`( `date`, `file`, `hours`, `dateTimeCreated`) 
-                        VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-                        if($insert_activity){
-                            $insert_activity->bind_param("ssis",$date,$file,$hours,$date_created);
-                            $insert_activity->execute();
-               }
-    
-    
-    
-    }*/
 ?>
 <html lang="en">
 <head>
 <meta name="viewport" content="width=1024">
+ <link href="https://cdn.datatables.net/v/bs5/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../src/css/student/studActivityStyle.css">
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" ></script>
 
 <!--sidebar-->
 <div class="container-fluid">
@@ -93,14 +76,15 @@ include "../include/session.php";
                             </div>
                             <div class="card-body">
                                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Send Files
+                                    Submit an activity
                                 </button>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead>
+                                            <th>NO</th>
                                             <th>Date</th>
+                                            <th>Images</th>
                                             <th>Details</th>
-                                            <th>Hours</th>
                                         </thead>
                                         <tbody>
                                         </tbody>
@@ -121,26 +105,22 @@ include "../include/session.php";
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Insert a file</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Insert a activity</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="" method="POST" enctype="multipart/form-data">
                              <div class="mb-3">
                                 <label for="formFileMultiple" class="form-label">Select Date </label>
-                                <input class="form-control" type="date" name="date" id="formFileMultiple" multiple required>
+                                <input class="form-control" type="date" name="date" id="formFileMultiple" required>
                             </div>
                             <div class="mb-3">
                                 <label for="formFileMultiple" class="form-label">Please Input Files </label>
-                                <input class="form-control" type="file" name="files[]" id="formFileMultiple" accept=".doc,.docx,.pdf,.jpeg,.jpg,.jpg" multiple required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="formFileMultiple" class="form-label">Hours </label>
-                                <input class="form-control" type="number" name="hours" id="hours" multiple required>
+                                <input class="form-control" type="file" name="file" id="formFileMultiple" accept=".doc,.docx,.pdf,.jpeg,.jpg,.jpg" required >
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label">Details/Description</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" name="details" id="exampleFormControlTextarea1" rows="3" required></textarea>
                             </div>
                     </div>
                     <div class="modal-footer">
@@ -153,22 +133,122 @@ include "../include/session.php";
         </div>
 <!--end of modal-->
 
-                <?php
-            if(isset($_POST['submit'])){
+   <!-- data tables -->
+            
+<script type="text/javascript">
+    $(document).ready(function() {
 
-                $content = $_POST['content'];
+
+      var dataTable = $('table').DataTable({
+        "ajax": "get_activity.php", // URL to server-side script that returns JSON data
+        
+        "columns": [
+             {
+            "data": "total" 
+          },
+           {
+            "data": "date" 
+          },
+            {
+            "data": "file",
+            "render": function(data, type, full, meta) {
+              return '<img src="activity/' + data + '" width="150" height="150">';
+            }
+
+          },
+         
+         
+        {
+            "data": "details"
+          },
+
+        ],
+
+        
+
+
+        // "rowCallback": function(row, data, index) {
+        //   $(row).on('click', function() {
+        //     window.location.href = 'view_student.php?view=' + data.studentid;
+        //   });
+        // },
+
+
+
+
+        lengthMenu: [
+          [10, 20, 50, -1],
+          [10, 20, 50, 'All'],
+        ],
+      });
+
+       
+
+
+
+
+      $('.dataTables_filter input').attr('maxLength', 16),
+        setInterval(function() {
+          dataTable.ajax.reload(null, false); // Reload table data every 5 seconds
+        }, 5000);
+    });
+
+
+  </script>
+
+    <!--script-->
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-1.13.8/datatables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+ 
+
+</body>
+</html>
+
+
+  <?php
+  if(isset($_POST['save'])){
+   
+            $date = DateTime::createFromFormat('Y-m-d',$_POST['date'])->format('Y-m-d');
+            $details = $_POST['details'];
+
             $date_created = date('Y-m-d H:i:s');
             $date_updated = date('Y-m-d H:i:s');
 
-            $stmt = $conn->prepare("INSERT INTO `activity`(`date`, `file`, `hours`,`date_time_created`, `date_time_updated`) 
-                                    VALUES (?,?,?,?,?)");
+              $new_image = $_FILES['file']['name'];
+             $new_image_tmp = $_FILES['file']['tmp_name'];
+             $file_size = $_FILES['file']['size'];
+
+        if( $file_size ==  5242880){
+            echo "<script>alert('The file must be 5mb below');</script>";
+            return false;
+        }
+
+        else{
+             $stmt = $conn->prepare("INSERT INTO `activity`(`studentid`, `date`, `file`, `details`, `dateTimeCreated`) VALUES (?,?,?,?,?)");
 
             if($stmt){
-            $stmt->bind_param("ssiss",$content,$date_created,$date_updated);
+            $stmt->bind_param("sssss",$student_id,$date,$new_image,$details,$date_created);
             $stmt->execute();
-            echo "<script>alert('Sucessfully created');</script>";
+
+            if( move_uploaded_file($new_image_tmp, "activity/" .  $new_image)){
+                     echo "<script>alert('Sucessfully Submited');</script>";
+                      header('Location: activity.php');
+            }
+
+            else{
+                 echo "<script>alert('There is problem saving file');</script>";
+            }
+            
+           
 
             }
+
+        }
+
+         
+
+           
 
 
 
@@ -178,10 +258,3 @@ include "../include/session.php";
 
 
             ?> 
-
-    <!--script-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</body>
-</html>

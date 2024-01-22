@@ -128,12 +128,8 @@ include "../include/session.php";
             },
 
          {
-            "data": "date",
-                "render": function (data, type, row) {
-                    // Assuming 'joining_date' is in 'YYYY-MM-DD' format
-                    var date = new Date(data);
-                    return date.toLocaleDateString("en-US", { month: 'long', day: 'numeric', year: 'numeric' });
-                }
+            "data": "date"
+                
         },
 
          {
@@ -141,10 +137,36 @@ include "../include/session.php";
             },
 
              {
-                "data": "clockIn"
+                data: function ( row, type, set ) {
+              const timeString = row.clockIn;
+                    // Prepend any date. Use your birthday.
+                    const timeString12hr = new Date('1970-01-01T' + timeString + 'Z')
+                    .toLocaleTimeString('en-US',
+                        {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'}
+                    );
+                    
+                    return timeString12hr;
+          }
             },
-           {
-                "data": "clockOut"
+          { data: function ( row, type, set ) {
+
+            if(row.clockOut == '00:00:00.000000'){
+                return '00:00:00.000000';
+            }
+
+            else{
+                 const timeString = row.clockOut;
+                    // Prepend any date. Use your birthday.
+                    const timeString12hr = new Date('1970-01-01T' + timeString + 'Z')
+                    .toLocaleTimeString('en-US',
+                        {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'}
+                    );
+                    
+                    return timeString12hr;
+            }
+
+             
+          }
             },
             {
                 "data":"totalHrs"

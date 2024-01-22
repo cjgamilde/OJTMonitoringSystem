@@ -7,7 +7,7 @@ include '../include/connection.php';
 
 
 
-$result = mysqli_query($conn, "SELECT `id` ,`studentid`, `reqList`, `submissionDeadline`, `status`,
+$result = mysqli_query($conn, "SELECT `id` ,`studentid`, `reqList`, `submissionDeadline`, `status`,`subform`,
  ROW_NUMBER() OVER () AS total
 FROM `files` WHERE studentid = '$student_id' ");
 $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
