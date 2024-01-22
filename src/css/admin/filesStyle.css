@@ -11,7 +11,7 @@
             border-radius: 8px;
             color: white;
   }
-  .nav-item [name="dashboard"]{
+  .nav-item [name="studentlist"]{
            border-radius: 8px;
            margin-top: 5px;
            margin-bottom: 10px;
@@ -19,7 +19,7 @@
             color: white;
             
   }
-  .nav-item [name="dashboard"]:hover{
+  .nav-item [name="studentlist"]:hover{
     border-radius: 8px;
      background-color: rgb(0, 0, 175);
      color: rgb(255, 255, 255);
