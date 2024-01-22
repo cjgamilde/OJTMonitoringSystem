@@ -113,43 +113,41 @@ include "../include/session.php";
                         </a>
                     </li>
                 </ul>
-            </div>
-        </div>
-        <div class="col-sm p-3 min-vh-100">
-            <div class="container-xxl">
-                <h1>FILES</h1>
-                <hr> 
-                <a class="btn btn-primary" role="button">Requirements</a>
-            </div>
-                    <div class="row pt-3 px-2 w-80">
-                            <div class="card ">
-                                <div class="card-header">
-                                    <h4 class="card-title"> Requirements List </h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                         <table class="table table-hover">
-                                    <thead>
-                                         <th>No</th>
-                                        <th>File Name</th>
-                                        <th>Date submission</th>
-                                        <th>Status</th>
-                                        <th></th>
-                                         <th>Action</th>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
+             </div>
+         </div>
+                 <div class="col-sm p-3 min-vh-100">
+                    <div class="container-xxl">
+                        <h1>FILES</h1>
+                        <hr> 
+                        <a class="btn btn-primary" role="button">Requirements</a>
+                    </div>
+                            <div class="row pt-3 px-3" style="width:1000px">
+                                    <div class="card ">
+                                        <div class="card-header">
+                                            <h4 class="card-title"> Requirements List </h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                            <thead>
+                                                <th>No</th>
+                                                <th>File Name</th>
+                                                <th>Date submission</th>
+                                                <th>Status</th>
+                                                <th></th>
+                                                <th>Action</th>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
-
-                            </div>
-                        </div>
-
-              
+                    </div>
         </div>
-
-   
+    </div>
 
         <script type="text/javascript">
     $(document).ready(function() {

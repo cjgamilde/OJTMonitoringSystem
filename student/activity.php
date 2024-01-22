@@ -69,7 +69,7 @@ include "../include/session.php";
                 <h1>ACTIVITY</h1>
                 <hr> 
                 <a class="btn btn-primary" role="button">My Activities</a>
-                    <div class="row pt-3">
+                    <div class="row pt-3" style="width:1000px">
                         <div class="card ">
                             <div class="card-header">
                                 <h4 class="card-title"> Activities </h4>
