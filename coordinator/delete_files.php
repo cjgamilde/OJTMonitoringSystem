@@ -8,7 +8,7 @@ include "../include/session.php";
 
 if(isset($_GET['delete'])){
      $id = $_GET['delete'];
-      $student_id = $_SESSION['studentid'];
+    $student_id = $_SESSION['studentid'];
 
 
 
@@ -39,8 +39,7 @@ if(isset($_GET['delete'])){
         $delete_query->bind_param("i",$id);
         $delete_query->execute();
         echo "<script>alert('Sucessfully Deleted');</script>";
-         echo "
-              <script type = 'text/javascript'>
+         echo "<script type = 'text/javascript'>
               window.location = 'files.php?view=$student_id';
               </script>";
         exit();

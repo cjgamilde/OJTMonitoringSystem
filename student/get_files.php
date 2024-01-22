@@ -9,7 +9,7 @@ include '../include/connection.php';
 
 $result = mysqli_query($conn, "SELECT `id` ,`studentid`, `reqList`, `submissionDeadline`, `status`,
  ROW_NUMBER() OVER () AS total
-FROM `files` WHERE studentid = '$student_id' ");
+FROM `files` WHERE studentid = '$student_id' AND status IN ('1','3','4','5','6') ");
 $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
