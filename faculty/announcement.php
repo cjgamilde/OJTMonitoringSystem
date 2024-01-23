@@ -32,7 +32,7 @@ include "../include/session.php";
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 px-3" style = "align-items:start; text-align:left;">
                         <li class="nav-item">
                             <a href="index.php" class="nav-link " title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard" name="dashboard">
-                            <i class="bi bi-house-fill fs-3"></i> DashBoard
+                            <i class="bi bi-house-fill fs-3"></i> Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
@@ -73,7 +73,7 @@ include "../include/session.php";
             <hr> 
               <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" role="button"> Create Announcement</a>
            
-         <div class="row pt-3" style="width:1000px;">
+         <div class="row pt-3" style="width:900px;">
                     <div class="card ">
                         <div class="card-header">
                             <h4 class="card-title"> HISTORY </h4>
