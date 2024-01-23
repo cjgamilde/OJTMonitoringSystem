@@ -80,6 +80,7 @@ include "../include/session.php";
                                 </button>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
+                                        <br>
                                         <thead>
                                             <th>NO</th>
                                             <th>Date</th>

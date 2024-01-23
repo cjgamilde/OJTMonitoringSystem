@@ -71,7 +71,7 @@ include "../include/session.php";
          <div class="container-xxl">
             <h1>PROFILE</h1>
             <hr> 
-            <a class="btn btn-primary" role="button" href="index.php" >DashBoard</a>
+            <a class="btn btn-primary" role="button" href="index.php" >Dashboard</a>
             <a class="btn btn-secondary" role="button" >Profile</a>
             <form action="" method="post" enctype="multipart/form-data" name="form">
             <div class="profile-container ">

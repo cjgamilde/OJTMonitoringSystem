@@ -73,7 +73,7 @@ include "../include/session.php";
             <hr> 
               <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" role="button"> Create Announcement</a>
            
-         <div class="row pt-3" style="width:1000px;">
+         <div class="row offset-md-0 pt-3" style="width:900px;">
                     <div class="card ">
                         <div class="card-header">
                             <h4 class="card-title"> HISTORY </h4>

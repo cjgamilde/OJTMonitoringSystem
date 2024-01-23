@@ -65,21 +65,19 @@ include "../include/session.php";
             </div>
         </div>
         <div class=" row col-sm p-3 min-vh-100">
-        <div class="container-xxl">
-            <h1>TIMESHEET</h1>
-            <hr>
-            <a class="btn btn-primary" role="button" href="attendance.php">My Attendance</a>
-            <a class="btn btn-secondary" role="button">Timesheet</a> 
+            <div class="container-xxl">
+                <h1>TIMESHEET</h1>
+                <hr>
+                <a class="btn btn-primary" role="button" href="attendance.php">My Attendance</a>
+                <a class="btn btn-secondary" role="button">Timesheet</a> 
             </div>
-            <br>
-           <div class="row pt-5">
+               <div class="row pt-1 px-3">
                     <div class="card ">
                         <div class="card-header">
-                            <h4 class="card-title"> Files </h4>
+                            <h4 class="card-title"> Timesheet </h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <h3>TimeSheet</h3>
                                 <table class="table table-hover">
                                     <thead>
                                         <th>No</th>
@@ -101,10 +99,7 @@ include "../include/session.php";
         </div>
     </div>
 
-        </div>
-
-        </div>
-        </div>
+</div>
 
 
 
