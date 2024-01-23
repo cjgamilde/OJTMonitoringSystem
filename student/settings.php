@@ -240,12 +240,26 @@ include "../include/session.php";
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Change Password</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        ...
+      <div class="modal-body ">
+
+        <form action= "" method = "post">
+          <label  class="col-form-label"> New-Password</label>
+        <div class="col-md-8">
+          
+            <input type="password" name="password" class="form-control" required>
+         </div>
+
+
+         <label  class="col-form-label"> Confirm Password</label>
+        <div class="col-md-8">
+          
+            <input type="password" name="con_paswword" class="form-control" required>
+         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Confirm</button>
+        <input type="submit"  class="btn btn-primary" name="change" value="Change Password" >
+        </form>
       </div>
     </div>
   </div>
@@ -361,6 +375,46 @@ $date_updated = date('Y-m-d H:i:s');
 
 
             }
+
+
+
+
+if(isset($_POST['change'])){
+
+
+
+     $password = $_POST['password'];
+    $password2 = $_POST['con_paswword'];
+
+    if ($password == $password2) {
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    $update = $conn->prepare("UPDATE `users` SET `password`= ? WHERE `username` = ?");
+    $update->bind_param("ss",$hashed_password,$student_id);
+    $update->execute();
+        echo "<script> alert('The password has been successfuly change')</script>";
+
+   
+
+
+}
+
+else{
+ echo "<script> alert('The password is not match ')</script>";
+
+}
+
+
+
+
+
+
+
+
+
+
+}
 
 
 ob_end_flush();

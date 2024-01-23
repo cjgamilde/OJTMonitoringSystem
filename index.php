@@ -1,7 +1,7 @@
 <?php
     session_start();
     date_default_timezone_set('Asia/Manila');
-    include "./include/connection.php"
+    include "./include/connection.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@
     <input type="password" name="password">
     <br>
     <input type="submit" value="SUBMIT" name="submit">
-    <a name="frgtpass" href="">Forgot Password?</a>
+    <a name="frgtpass" href="forgot-password.php">Forgot Password?</a>
     </form>
 
     

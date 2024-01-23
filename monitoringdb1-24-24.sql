@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2024 at 03:14 PM
+-- Generation Time: Jan 23, 2024 at 08:03 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -62,11 +62,7 @@ CREATE TABLE `announcement` (
 --
 
 INSERT INTO `announcement` (`id`, `description`, `date_time_created`, `date_time_updated`) VALUES
-(1, 'Sample Announcement', '2024-01-12 09:59:44', '2024-01-12 09:59:44'),
-(2, 'Sample Announcement2', '2024-01-12 09:59:44', '2024-01-12 09:59:44'),
-(3, 'tite', '2024-01-14 21:57:14', '2024-01-14 21:57:14'),
-(4, 'titeng malaki\r\n', '2024-01-20 16:13:49', '2024-01-20 16:13:49'),
-(5, 'titeng maliit', '2024-01-20 16:14:31', '2024-01-20 16:14:31');
+(2, 'Sample Announcement2', '2024-01-12 09:59:44', '2024-01-12 09:59:44');
 
 -- --------------------------------------------------------
 
@@ -145,7 +141,8 @@ CREATE TABLE `files` (
 --
 
 INSERT INTO `files` (`id`, `studentid`, `reqList`, `submissionDeadline`, `subform`, `dateTimeCreated`, `dateTimeUpdated`, `status`) VALUES
-(8, 1903090, 'OJT-Monitoring-System-1.pdf', '2024-01-22', 'OJT-Monitoring-System.pdf1903090', '2024-01-17 18:46:41.000000', '0000-00-00 00:00:00.000000', '2');
+(8, 1903090, 'OJT-Monitoring-System-1.pdf', '2024-01-22', 'OJT-Monitoring-System.pdf1903090', '2024-01-17 18:46:41.000000', '0000-00-00 00:00:00.000000', '2'),
+(13, 12345678, 'VOLUNTEER-ACCEPTANCE-LETTER.pdf', '2024-01-30', NULL, '2024-01-23 02:58:11.000000', '0000-00-00 00:00:00.000000', '3');
 
 -- --------------------------------------------------------
 
@@ -221,6 +218,7 @@ CREATE TABLE `studentinfo` (
   `yearProg` varchar(100) DEFAULT NULL,
   `birthDate` date DEFAULT NULL,
   `gender` varchar(100) DEFAULT NULL,
+  `otp` varchar(225) DEFAULT NULL,
   `dateTimeCreated` datetime(6) DEFAULT NULL,
   `dateTimeUpdated` datetime(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -229,9 +227,9 @@ CREATE TABLE `studentinfo` (
 -- Dumping data for table `studentinfo`
 --
 
-INSERT INTO `studentinfo` (`id`, `studentid`, `image`, `lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `dateTimeCreated`, `dateTimeUpdated`) VALUES
-(2, 1903090, 'maeva-vigier-eBr00r3xe7I-unsplash.jpg', 'Gamit', 'Thaddeus', 'Angeles', 1987, 'thaddeusgamit31@gmail.com', 'SOAST', '4th-year BSIT', '2018-03-31', 'Male', '2024-01-13 12:29:19.000000', '2024-01-20 19:51:25.000000'),
-(7, 12345678, 'CAPSTONE TEMPLATE.png', 'Denton', 'Benjamin', 'Whilemina', 2006, 'wedonokit@mailinator.com', 'SOTE', '4th Year-BSIT', '1984-04-26', 'Female', '2024-01-20 15:54:23.000000', '2024-01-20 16:09:24.000000');
+INSERT INTO `studentinfo` (`id`, `studentid`, `image`, `lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `otp`, `dateTimeCreated`, `dateTimeUpdated`) VALUES
+(2, 1903090, 'maeva-vigier-eBr00r3xe7I-unsplash.jpg', 'Gamit', 'Thaddeus', 'Angeles', 1987, 'thaddeusgamit31@gmail.com', 'SOAST', '4th-year BSIT', '2018-03-31', 'Male', '$2y$10$ZxK59Jq56yFX7TRSRuQ0SORGPk1Yp4Yn6Hjuyx7tLaJf3ICJcib4u', '2024-01-13 12:29:19.000000', '2024-01-20 19:51:25.000000'),
+(7, 12345678, 'CAPSTONE TEMPLATE.png', 'Denton', 'Benjamin', 'Whilemina', 2006, 'wedonokit@mailinator.com', 'SOTE', '4th Year-BSIT', '1984-04-26', 'Female', NULL, '2024-01-20 15:54:23.000000', '2024-01-20 16:09:24.000000');
 
 -- --------------------------------------------------------
 
@@ -253,7 +251,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `usertype`, `studentid`) VALUES
 (1, 'admin1', '$2y$10$MUar52G9Zq9OyAcvksMpVu6mDZveLholtdQ7bu4WOgJH6gTWVCd9i', 2, 0),
-(2, '1903090', '$2y$10$MUar52G9Zq9OyAcvksMpVu6mDZveLholtdQ7bu4WOgJH6gTWVCd9i', 1, 0),
+(2, '1903090', '$2y$10$MX08j2.9DQ0Bjk6fIc10ue7ce1gL9WLeR59GrJ2/rsMby1QzMlexa', 1, 0),
 (3, 'faculty1', '$2y$10$MUar52G9Zq9OyAcvksMpVu6mDZveLholtdQ7bu4WOgJH6gTWVCd9i', 3, 0),
 (4, 'coordi1', '$2y$10$MUar52G9Zq9OyAcvksMpVu6mDZveLholtdQ7bu4WOgJH6gTWVCd9i', 4, 0),
 (5, 'student2', '$2y$10$npdWIbsDAVagJ.jlD6x7eObjvgMSkVk/TC/Wag7kgENKTMC/mM2Nu', 1, 0),
@@ -373,7 +371,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `practicuminfo`
