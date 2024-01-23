@@ -14,7 +14,7 @@ include "../include/session.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../src/css/admin/announcement.css">
-    <title>COORDINATOR</title>
+    <title>FACULTY</title>
 </head>
 <body>
 
@@ -27,7 +27,7 @@ include "../include/session.php";
                 <a href="index.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
                    <img src="../src/images/ntclogo.PNG" class="img-fluid" alt="...">
                 </a>
-                <h3> Coordinator Portal</h3>
+                <h3>Faculty Portal</h3>
                             <br>
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 px-3" style = "align-items:start; text-align:left;">
                         <li class="nav-item">
@@ -73,18 +73,15 @@ include "../include/session.php";
             <hr> 
               <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" role="button"> Create Announcement</a>
            
-         <div class="row pt-5">
+         <div class="row pt-3" style="width:1000px;">
                     <div class="card ">
                         <div class="card-header">
-                            <h4 class="card-title"> Files </h4>
+                            <h4 class="card-title"> HISTORY </h4>
                         </div>
                         <div class="card-body">
-                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Send Files
-                            </button>
                             <div class="table-responsive">
-                                <h3>Files</h3>
                                 <table class="table table-hover">
+                                  <br>
                                     <thead>
                                          <th>No</th>
                                         <th>Description</th>

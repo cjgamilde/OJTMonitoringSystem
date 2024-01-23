@@ -38,12 +38,11 @@ if(isset($_GET['id'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../src/css/student/studFilesStyle.css">
-    <link rel="stylesheet" href="../src/css/admin/registerStyle.css">
     <title>OJT MONITORING SYSTEM</title>
 </head>
 <body>
     <script src="https://code.jquery.com/jquery-3.7.0.js" ></script>
-<div class="container-fluid">
+    <div class="container-fluid">
     <div class="row">
         <div class="col-sm-auto bg-white sticky-top shadow">
             <div class="d-flex flex-sm-column flex-row flex-nowrap bg-white align-items-center sticky-top">
@@ -87,8 +86,8 @@ if(isset($_GET['id'])){
                         </a>
                     </li>
                 </ul>
-            </div>
-        </div>
+             </div>
+         </div>
         <div class="col-sm p-3 min-vh-100">
             <div class="container-xxl">
                 <h1>FILES</h1>
@@ -98,7 +97,7 @@ if(isset($_GET['id'])){
                     <div>
                     
                     <hr>
-                    <div>
+                    <div class="px-2" style="width:1000px;">
                     <form method="post" action="" enctype="multipart/form-data">
                         <h1 class="text-center">Submit your file</h1>
 
@@ -106,7 +105,7 @@ if(isset($_GET['id'])){
                        <label for="formFileLg" class="form-label">Choose your file</label>
                     <input class="form-control form-control-lg" id="formFileLg" type="file" name="subfile" required>
                         <br>
-                        <input type="submit" value="SUBMIT" name="submit">
+                        <input class="btn"type="submit" value="SUBMIT" name="submit">
                     </form>
                     </div>
                 </div>

@@ -73,18 +73,13 @@ include "../include/session.php";
             <hr> 
               <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" role="button"> Create Announcement</a>
            
-         <div class="row pt-5">
+         <div class="row pt-3" style="width:1000px;">
                     <div class="card ">
                         <div class="card-header">
-                            <h4 class="card-title"> Files </h4>
+                            <h4 class="card-title"> HISTORY </h4>
                         </div>
-                        <div class="card-body">
-                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Send Files
-                            </button>
-                            <div class="table-responsive">
-                                <h3>Files</h3>
                                 <table class="table table-hover">
+                                  <br>
                                     <thead>
                                          <th>No</th>
                                         <th>Description</th>

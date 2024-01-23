@@ -163,6 +163,15 @@ include "../include/session.php";
            {
             "data": "reqList" 
           },
+         
+          {
+            "data": "submissionDeadline",
+                "render": function (data, type, row) {
+                    // Assuming 'joining_date' is in 'YYYY-MM-DD' format
+                    var date = new Date(data);
+                    return date.toLocaleDateString("en-US", { month: 'long', day: 'numeric', year: 'numeric' });
+                }
+        },
 
           {
             "data": "status",
@@ -189,14 +198,7 @@ include "../include/session.php";
             }
           },
 
-         {
-            "data": "submissionDeadline",
-                "render": function (data, type, row) {
-                    // Assuming 'joining_date' is in 'YYYY-MM-DD' format
-                    var date = new Date(data);
-                    return date.toLocaleDateString("en-US", { month: 'long', day: 'numeric', year: 'numeric' });
-                }
-        },
+
 
          {
                             "data": "reqList",

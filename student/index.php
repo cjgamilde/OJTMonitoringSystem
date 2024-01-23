@@ -82,7 +82,7 @@ include "../include/session.php";
                         </div>
                     </div>
                 </div>
-                <div class="col-2" style="width: 500px;">
+              <!--  <div class="col-2" style="width: 500px;">
                     <div class="card">
                         <div class="card-body">
                         <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Student Status</span>
@@ -91,7 +91,7 @@ include "../include/session.php";
                                 <h4>HTE STATUS:</h4>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
