@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2024 at 08:03 PM
+-- Generation Time: Jan 24, 2024 at 06:40 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -92,8 +92,8 @@ CREATE TABLE `attendance` (
 --
 
 INSERT INTO `attendance` (`id`, `studentid`, `date`, `day`, `clockIn`, `clockOut`, `breakIn`, `breakOut`, `totalHrs`, `latitude`, `longitude`, `location`, `dateTimeCreated`, `dateTimeUpdated`) VALUES
-(3, '1903090', 'Jan-20-2024', 'Saturday', '18:15:00.000000', '19:13:00.000000', '18:45:00.000000', '18:56:00.000000', 1, '14.6083474', '121.0094661', 'Valdez Street, Barangay 584, Sampaloc, Fourth District, Manila, Capital District, Metro Manila, 1132, Philippines', '2024-01-20 18:15:28.000000', '0000-00-00 00:00:00.000000'),
-(5, '1903090', 'Jan-22-2024', 'Monday', '12:08:00.000000', '00:00:00.000000', '00:00:00.000000', '00:00:00.000000', 0, '14.6083577', '121.0094679', 'Valdez Street, Barangay 584, Sampaloc, Fourth District, Manila, Capital District, Metro Manila, 1132, Philippines', '2024-01-22 12:08:42.000000', '0000-00-00 00:00:00.000000');
+(3, '1903090', 'Jan-20-2024', 'Saturday', '18:15:00.000000', '19:13:00.000000', '18:45:00.000000', '18:56:00.000000', 8, '14.6083474', '121.0094661', 'Valdez Street, Barangay 584, Sampaloc, Fourth District, Manila, Capital District, Metro Manila, 1132, Philippines', '2024-01-20 18:15:28.000000', '0000-00-00 00:00:00.000000'),
+(5, '1903090', 'Jan-22-2024', 'Monday', '12:08:00.000000', '00:00:00.000000', '00:00:00.000000', '00:00:00.000000', 8, '14.6083577', '121.0094679', 'Valdez Street, Barangay 584, Sampaloc, Fourth District, Manila, Capital District, Metro Manila, 1132, Philippines', '2024-01-22 12:08:42.000000', '0000-00-00 00:00:00.000000');
 
 -- --------------------------------------------------------
 
@@ -192,12 +192,12 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`id`, `status`) VALUES
-('L0', 'I have not started anything regarding OJT'),
-('L1', 'I have applied to HTEs but have not yet been accepted to one'),
-('L2', 'I have been accepted in an HTE but I am still fixing my requirements'),
-('L3', 'I have been accepted in an HTE and have started my training'),
-('L4', 'I am working student and waiting for approval'),
-('L5', 'I am working student and have recieved my credeting approval');
+('1', 'I have not started anything regarding OJT'),
+('2', 'I have applied to HTEs but have not yet been accepted to one'),
+('3', 'I have been accepted in an HTE but I am still fixing my requirements'),
+('4', 'I have been accepted in an HTE and have started my training'),
+('5', 'I am working student and waiting for approval'),
+('6', 'I am working student and have recieved my credeting approval');
 
 -- --------------------------------------------------------
 
@@ -218,6 +218,7 @@ CREATE TABLE `studentinfo` (
   `yearProg` varchar(100) DEFAULT NULL,
   `birthDate` date DEFAULT NULL,
   `gender` varchar(100) DEFAULT NULL,
+  `status` varchar(50) NOT NULL,
   `otp` varchar(225) DEFAULT NULL,
   `dateTimeCreated` datetime(6) DEFAULT NULL,
   `dateTimeUpdated` datetime(6) DEFAULT NULL
@@ -227,9 +228,9 @@ CREATE TABLE `studentinfo` (
 -- Dumping data for table `studentinfo`
 --
 
-INSERT INTO `studentinfo` (`id`, `studentid`, `image`, `lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `otp`, `dateTimeCreated`, `dateTimeUpdated`) VALUES
-(2, 1903090, 'maeva-vigier-eBr00r3xe7I-unsplash.jpg', 'Gamit', 'Thaddeus', 'Angeles', 1987, 'thaddeusgamit31@gmail.com', 'SOAST', '4th-year BSIT', '2018-03-31', 'Male', '$2y$10$ZxK59Jq56yFX7TRSRuQ0SORGPk1Yp4Yn6Hjuyx7tLaJf3ICJcib4u', '2024-01-13 12:29:19.000000', '2024-01-20 19:51:25.000000'),
-(7, 12345678, 'CAPSTONE TEMPLATE.png', 'Denton', 'Benjamin', 'Whilemina', 2006, 'wedonokit@mailinator.com', 'SOTE', '4th Year-BSIT', '1984-04-26', 'Female', NULL, '2024-01-20 15:54:23.000000', '2024-01-20 16:09:24.000000');
+INSERT INTO `studentinfo` (`id`, `studentid`, `image`, `lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `status`, `otp`, `dateTimeCreated`, `dateTimeUpdated`) VALUES
+(2, 1903090, 'maeva-vigier-eBr00r3xe7I-unsplash.jpg', 'Gamit', 'Thaddeus', 'Angeles', 1987, 'thaddeusgamit31@gmail.com', 'SOAST', '4th-year BSIT', '2018-03-31', 'Male', '3', '$2y$10$ZxK59Jq56yFX7TRSRuQ0SORGPk1Yp4Yn6Hjuyx7tLaJf3ICJcib4u', '2024-01-13 12:29:19.000000', '2024-01-20 19:51:25.000000'),
+(7, 12345678, 'CAPSTONE TEMPLATE.png', 'Denton', 'Benjamin', 'Whilemina', 2006, 'wedonokit@mailinator.com', 'SOTE', '4th Year-BSIT', '1984-04-26', 'Female', '4', NULL, '2024-01-20 15:54:23.000000', '2024-01-20 16:09:24.000000');
 
 -- --------------------------------------------------------
 
@@ -319,11 +320,19 @@ ALTER TABLE `practicuminfo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
+
+--
 -- Indexes for table `studentinfo`
 --
 ALTER TABLE `studentinfo`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `studentid` (`studentid`);
+  ADD KEY `studentid` (`studentid`),
+  ADD KEY `status` (`status`);
 
 --
 -- Indexes for table `users`
@@ -394,6 +403,12 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `studentinfo`
+--
+ALTER TABLE `studentinfo`
+  ADD CONSTRAINT `studentinfo_ibfk_1` FOREIGN KEY (`status`) REFERENCES `status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `usertype`

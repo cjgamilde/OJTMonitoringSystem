@@ -101,6 +101,21 @@ if(isset($_GET['view'])){
             <hr> 
             <a class="btn btn-secondary" href="view_student.php?view=<?php echo $student_id?>"  role="button">Student Information</a>
             <a class="btn btn-secondary" href="files.php?view=<?php echo $student_id ?>" role="button">Files</a>
+           
+            <form id="myForm" action="process.php" method="post">
+                <input type="hidden" name = "studentid" value = "<?php echo $student_id ?>" >
+                <label for="selectOption">Select Status:</label>
+                <select id="selectOption" name="selectOption" onchange="submitForm()">
+                    <option value="1">l0:I have not started anything regarding OJT</option>
+                    <option value="2">l1:I have applied to HTEs but have not yet been accepted to one</option>
+                    <option value="3">l2:I have been accepted in an HTE but I am still fixing my requirements</option>
+                    <option value="4">l3:I have been accepted in an HTE and have started my training</option>
+                    <option value="5">l4:I am working student and waiting for approval</option>
+                    <option value="6">l5:I am working student and have recieved my credeting approval</option>
+                </select>
+            </form>
+
+
 
             <form action="" method="post" enctype="multipart/form-data">
             <div class="profile-container ">

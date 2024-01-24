@@ -284,6 +284,7 @@ $college = $_POST["college"];
 $year_course = $_POST["year_course"];
 $birth_date = DateTime::createFromFormat('Y-m-d', $_POST['birth_date'])->format('Y-m-d');
 $gender = $_POST["gender"]; 
+$status = 1;
 
 $date_created = date('Y-m-d H:i:s');
 $date_updated = date('Y-m-d H:i:s');
@@ -316,10 +317,10 @@ $date_updated = date('Y-m-d H:i:s');
                              
                         
                     if(empty($new_image)){
-                        $run_update = $conn->prepare("UPDATE `studentinfo` SET `lastName`=?,`firstName`=?,`middleName`=?,`contactNum`=?,`email`=?,`college`=?,`yearProg`=?,`birthDate`=?,`gender`=?,`dateTimeUpdated`=? WHERE `studentid` = ?");
+                        $run_update = $conn->prepare("UPDATE `studentinfo` SET `lastName`=?,`firstName`=?,`middleName`=?,`contactNum`=?,`email`=?,`college`=?,`yearProg`=?,`birthDate`=?,`gender`=?,`status`=?,`dateTimeUpdated`=? WHERE `studentid` = ?");
 
                           if($run_update){
-                            $run_update->bind_param("sssissssssi",$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$date_updated,$student_id);
+                            $run_update->bind_param("sssisssssssi",$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$status,$date_updated,$student_id);
                             $run_update->execute();
                             echo "<script>alert('Sucessfully Updated');</script>";
                               header('Location: settings.php');
@@ -330,8 +331,8 @@ $date_updated = date('Y-m-d H:i:s');
 
                     }
                     else{
-                        $run_update_image = $conn->prepare("UPDATE `studentinfo` SET `image`=?, `lastName`=?,`firstName`=?,`middleName`=?,`contactNum`=?,`email`=?,`college`=?,`yearProg`=?,`birthDate`=?,`gender`=?,`dateTimeUpdated`=? WHERE `studentid` = ?");
-                        $run_update_image->bind_param("ssssissssssi",$update_filename,$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$date_updated,$student_id);
+                        $run_update_image = $conn->prepare("UPDATE `studentinfo` SET `image`=?, `lastName`=?,`firstName`=?,`middleName`=?,`contactNum`=?,`email`=?,`college`=?,`yearProg`=?,`birthDate`=?,`gender`=?,`status`=?,`dateTimeUpdated`=? WHERE `studentid` = ?");
+                        $run_update_image->bind_param("ssssisssssssi",$update_filename,$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$status,$date_updated,$student_id);
                         
                         if(isset($_FILES['image'])){
                             if($_FILES['image']['size'] > 5242880) { 

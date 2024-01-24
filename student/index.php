@@ -87,8 +87,8 @@ include "../include/session.php";
                         <div class="card-body">
                         <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Student Status</span>
                         <hr> 
-                            <div class="container" id="announcement">
                                 <h4>HTE STATUS:</h4>
+                                <div class="container" id="status">
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ include "../include/session.php";
                             <div class="row g-03">
                                 <h5 class="card-title pt-3 px-4">Attendance Report</h5>
                                     <div class="col-md-7">
-                                        <canvas id="myChart"></canvas>
+                                        <canvas id="myDoughnutChart" ></canvas>
                                     </div>
                                 <div class="col-md-5">
                                     <div class="card-body" >
@@ -123,28 +123,50 @@ include "../include/session.php";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
-                const ctx = document.getElementById('myChart');
 
-                new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Total Hours completed','Total Hours Remaining'],
-                        datasets: [{
-                            label: '# of Data', 
-                            data: [120,360],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        aspectRatio: 2,
-                    }
-                });
-            </script>
-
-
- 
  <script>
+        // Get the canvas context
+        var ctx = document.getElementById('myDoughnutChart').getContext('2d');
+
+        // Initial data for the chart
+        var initialData = {
+            labels: ['# Total of hours',' # Total of hours to complete'],
+            datasets: [{
+                data: [],
+                backgroundColor: ["#FF6384", "#36A2EB",],
+            }]
+        };
+
+        // Create the initial doughnut chart
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: initialData,
+        });
+
+        // Function to update the chart data
+        function updateChartData() {
+            // Fetch data from the PHP script using AJAX
+            $.ajax({
+                url: 'real_attendance.php',
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    // Update the chart data
+                    myDoughnutChart.data.datasets[0].data = [data.total,data.diff] ;
+                    // Update the chart
+                    myDoughnutChart.update();
+                },
+                error: function(error) {
+                    console.error('Error fetching data:', error);
+                }
+            });
+        }
+
+        // Update the chart data every 5 seconds (adjust as needed)
+        setInterval(updateChartData, 1000);
+    </script>
+
+<script>
             $(document).ready(function() {
                 function getData() {
                     $.ajax({
@@ -152,6 +174,26 @@ include "../include/session.php";
                         url: 'real_announcement.php',
                         success: function(data) {
                             $('#announcement').html(data);
+                        }
+                    });
+                }
+                getData();
+                setInterval(function() {
+                    getData();
+                }, 1000); // it will refresh your data every 1 sec
+
+            });
+        </script>
+
+
+<script>
+            $(document).ready(function() {
+                function getData() {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'real_status.php',
+                        success: function(data) {
+                            $('#status').html(data);
                         }
                     });
                 }
