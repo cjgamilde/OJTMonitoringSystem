@@ -364,7 +364,7 @@ function formatBytes($file_bytes, $precision = 2){
             {
             "data": "id" ,
             "render": function(data, type, full, meta) {
-                return ' <a class="btn btn-danger" href="status_file.php?approved='+data+'"  role="button">Approved</a> ' + '  <a class="btn btn-danger" href="status_file.php?return='+data+'"  role="button">Return</a>' + '<br>' + ' <a class="btn btn-danger" href="status_file.php?assign='+data+'"  role="button">Assign</a>' ;
+                return ' <a class="btn btn-danger" href="status_file.php?approved='+data+'"  role="button">Approved</a> ' + '  <a class="btn btn-danger" href="status_file.php?return='+data+'"  role="button">Return</a>' + '<br>' + ' <a class="btn btn-danger" href="status_file.php?assign='+data+'"  role="button">Assign</a>' +'<br>'+  '<a class="btn btn-danger" href="delete_files.php?delete='+data+'"  role="button"> <i class="bi bi-trash3-fill"> </i></a> ';
             }
           },
           
