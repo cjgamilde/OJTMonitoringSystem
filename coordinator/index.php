@@ -71,7 +71,7 @@ include "../include/session.php";
             <hr> 
             </div>
             <div class="row ">
-                    <div class="col-lg-6 col-md-6 col-sm-8">
+                    <div class="col-lg-6 col-md-8 col-sm-8 offset-md-3">
                         <div class="card card-stats">
                             <div class="card-body ">
                                 <div class="row">
@@ -128,7 +128,7 @@ foreach($get_student as $data){
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
-    type: 'doughnut',
+    type: 'bar',
     data: {
       labels: ['Total Of Student','Total of Male','Total of Female'],
       datasets: [{

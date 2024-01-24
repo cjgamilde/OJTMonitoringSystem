@@ -73,7 +73,7 @@ include "../include/session.php";
             <a class="btn btn-secondary" href="studProfile.php" role="button">Profile</a>
 
             <div class="row pt-2 g-2 text-center">
-                <div class="col-2" style="width: 490px;">
+                <div class="col-3" style="width: 490px;">
                     <div class="card">
                         <div class="card-body">
                         <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Announcement</span>
@@ -88,7 +88,7 @@ include "../include/session.php";
                         <i class="bi bi-lightbulb fs-4"></i> <span style="font-size:1.5rem;">Student Status</span>
                         <hr> 
                                 <h4>HTE STATUS:</h4>
-                                <div class="container" id="status">
+                                <div class="container" id="status" style="height: 112px;">
                             </div>
                         </div>
                     </div>
@@ -99,16 +99,17 @@ include "../include/session.php";
                         <div class="card">
                             <div class="row g-03">
                                 <h5 class="card-title pt-3 px-4">Attendance Report</h5>
-                                    <div class="col-md-7">
+                                <br>
+                                    <div class="col-md-5 offset-md-4">
                                         <canvas id="myDoughnutChart" ></canvas>
                                     </div>
-                                <div class="col-md-5">
+                             <!--   <div class="col-md-5">
                                     <div class="card-body" >
                                         <i class="bi bi-dot align-middle" style = "color:black; font-size:2rem;"></i> <span>Total Hours:</span>  <span>9</span>
                                         <br>
                                         <i class="bi bi-dot align-middle" style = "color:black; font-size:2rem;"></i> <span>Total Hours to Complete:</span> <span>480 HRS</span>
                                     </div>
-                                </div>     
+                                </div>   -->  
                             </div>
                         </div>
                     
