@@ -105,6 +105,7 @@ if(isset($_GET['view'])){
                 <input type="hidden" name = "studentid" value = "<?php echo $student_id ?>" >
                 <label for="selectOption">Select Status:</label>
                 <select id="selectOption" name="selectOption" onchange="submitForm()">
+                <option value="0">Select the status below</option>
                     <option value="1">l0:I have not started anything regarding OJT</option>
                     <option value="2">l1:I have applied to HTEs but have not yet been accepted to one</option>
                     <option value="3">l2:I have been accepted in an HTE but I am still fixing my requirements</option>
@@ -394,6 +395,16 @@ if(isset($_GET['view'])){
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    function submitForm() {
+        // Get the form element
+        var form = document.getElementById('myForm');
+        
+        // Submit the form
+        form.submit();
+    }
+</script>
 </body>
 </html>
 

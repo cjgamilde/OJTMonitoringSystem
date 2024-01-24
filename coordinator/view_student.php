@@ -105,6 +105,7 @@ if(isset($_GET['view'])){
                 <input type="hidden" name = "studentid" value = "<?php echo $student_id ?>" >
                 <label for="selectOption">Select Status:</label>
                 <select id="selectOption" name="selectOption" onchange="submitForm()">
+                    <option value="0">Select the status below</option>
                     <option value="1">l0:I have not started anything regarding OJT</option>
                     <option value="2">l1:I have applied to HTEs but have not yet been accepted to one</option>
                     <option value="3">l2:I have been accepted in an HTE but I am still fixing my requirements</option>
