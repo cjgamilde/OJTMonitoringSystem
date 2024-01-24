@@ -19,12 +19,13 @@ $college =null;
 $year_course =null;
 $birth_date =null;
 $gender =null; 
+$status = 1;
 $date_created = date('Y-m-d H:i:s');
 
-      $insert_student = $conn->prepare("INSERT INTO `studentinfo`( `studentid`,`lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `dateTimeCreated`) 
-                    VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+      $insert_student = $conn->prepare("INSERT INTO `studentinfo`( `studentid`,`lastName`, `firstName`, `middleName`, `contactNum`, `email`, `college`, `yearProg`, `birthDate`, `gender`, `status`, `dateTimeCreated`) 
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
                     if($insert_student){
-                        $insert_student->bind_param("isssissssss",$username,$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$date_created);
+                        $insert_student->bind_param("isssisssssss",$username,$last_name,$first_name,$middle_name,$contact_number,$email,$college,$year_course,$birth_date,$gender,$status,$date_created);
                         $insert_student->execute();
            }
 
