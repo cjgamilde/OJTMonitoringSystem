@@ -102,7 +102,7 @@ if(isset($_GET['view'])){
             <a class="btn btn-secondary" href="view_student.php?view=<?php echo $student_id?>"  role="button">Student Information</a>
             <a class="btn btn-secondary" href="files.php?view=<?php echo $student_id ?>" role="button">Files</a>
            
-            <form id="myForm" action="process.php" method="post">
+            <form id="myForm" action="process.php" method="post"><br>
                 <input type="hidden" name = "studentid" value = "<?php echo $student_id ?>" >
                 <label for="selectOption">Select Status:</label>
                 <select id="selectOption" name="selectOption" onchange="submitForm()">

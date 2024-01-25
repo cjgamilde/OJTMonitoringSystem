@@ -244,14 +244,14 @@ include "../include/session.php";
 
         <form action= "" method = "post">
           <label  class="col-form-label"> New-Password</label>
-        <div class="col-md-8">
+        <div class="col-md-12">
           
             <input type="password" name="password" class="form-control" required>
          </div>
 
 
          <label  class="col-form-label"> Confirm Password</label>
-        <div class="col-md-8">
+        <div class="col-md-12">
           
             <input type="password" name="con_paswword" class="form-control" required>
          </div>
