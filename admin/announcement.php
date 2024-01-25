@@ -10,12 +10,15 @@ include "../include/session.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.datatables.net/v/bs5/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../src/css/admin/announcement.css">
     <title>Admin</title>
 </head>
 <body>
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     
 <div class="container-fluid">
     <div class="row">
@@ -72,6 +75,29 @@ include "../include/session.php";
            
 
 
+              <div class="row pt-3" style="width:900px;">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h4 class="card-title"> HISTORY </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                  <br>
+                                    <thead>
+                                         <th>No</th>
+                                        <th>Description</th>
+                                         <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
           </div>
         </div>
 
@@ -104,10 +130,64 @@ include "../include/session.php";
   </div>
 </div>
 
-
+<script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-1.13.8/datatables.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+      var dataTable = $('table').DataTable({
+        "ajax": "get_announce.php", // URL to server-side script that returns JSON data
+        
+        "columns": [
+             {
+            "data": "total" 
+          },
+           {
+            "data": "description" 
+          },
+
+            {
+            "data": "id" ,
+            "render": function(data, type, full, meta) {
+                return ' <a class="btn btn-danger" href="delete_announce.php?delete='+data+'"  role="button"> <i class="bi bi-trash3-fill"> </i></a> ';
+            }
+          },
+          
+
+        ],
+
+        
+
+
+        // "rowCallback": function(row, data, index) {
+        //   $(row).on('click', function() {
+        //     window.location.href = 'view_student.php?view=' + data.studentid;
+        //   });
+        // },
+
+
+
+
+        lengthMenu: [
+          [10, 20, 50, -1],
+          [10, 20, 50, 'All'],
+        ],
+      });
+
+       
+
+
+
+
+      $('.dataTables_filter input').attr('maxLength', 16),
+        setInterval(function() {
+          dataTable.ajax.reload(null, false); // Reload table data every 5 seconds
+        }, 5000);
+    });
+
+    </script>
 </body>
 </html>
 
