@@ -81,9 +81,9 @@ include "../include/session.php";
                                 <table class="table table-hover">
                                     <thead>
                                         <th>No</th>
-                                        <th>DATE</th>
+                                        <th style="width:150px">DATE</th>
                                         <th>DAY</th>
-                                        <th>IN</th>
+                                        <th style="width:150px">IN</th>
                                         <th>OUT</th>
                                         <th>HOURS</th>
                                         <th>LOCATION</th>
